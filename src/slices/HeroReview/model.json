@@ -1,0 +1,62 @@
+{
+  "id": "hero_review",
+  "type": "SharedSlice",
+  "name": "HeroReview",
+  "description": "HeroReview",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "review_cards": {
+          "type": "Group",
+          "config": {
+            "label": "Review Cards",
+            "repeat": true,
+            "fields": {
+              "review_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Review Text",
+                  "placeholder": ""
+                }
+              },
+              "reviewers_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Reviewers Name",
+                  "placeholder": ""
+                }
+              },
+              "card_color": {
+                "type": "Select",
+                "config": {
+                  "label": "Card Color",
+                  "placeholder": "",
+                  "options": [
+                    "Purple ",
+                    "Pink",
+                    "Green",
+                    "Yellow"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

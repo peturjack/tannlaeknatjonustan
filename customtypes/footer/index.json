@@ -1,0 +1,72 @@
+{
+  "format": "custom",
+  "id": "footer",
+  "label": "footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "quick_links": {
+        "type": "Group",
+        "config": {
+          "label": "Quick Links",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
+        }
+      },
+      "contact_info": {
+        "type": "Group",
+        "config": {
+          "label": "Contact Info",
+          "repeat": true,
+          "fields": {
+            "info": {
+              "type": "Text",
+              "config": {
+                "label": "Info",
+                "placeholder": "Gmail, Location, Phone Number, Etc"
+              }
+            }
+          }
+        }
+      },
+      "socials": {
+        "type": "Group",
+        "config": {
+          "label": "Socials",
+          "repeat": true,
+          "fields": {
+            "social_icon": {
+              "type": "Image",
+              "config": {
+                "label": "Social Icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

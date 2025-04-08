@@ -1,0 +1,87 @@
+{
+  "id": "our_team_slice",
+  "type": "SharedSlice",
+  "name": "OurTeamSlice",
+  "description": "OurTeamSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        },
+        "add_staff": {
+          "type": "Group",
+          "config": {
+            "label": "Add Staff ",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "name": {
+                "type": "Text",
+                "config": {
+                  "label": "Name",
+                  "placeholder": ""
+                }
+              },
+              "occupation": {
+                "type": "Select",
+                "config": {
+                  "label": "Occupation",
+                  "placeholder": "",
+                  "options": [
+                    "Tannlæknir",
+                    "Aðstoðarmaður Tannlæknis"
+                  ]
+                }
+              },
+              "workplace": {
+                "type": "Select",
+                "config": {
+                  "label": "Workplace",
+                  "placeholder": "",
+                  "options": [
+                    "Reykjavík",
+                    "Selfoss",
+                    "Hella"
+                  ]
+                }
+              },
+              "email": {
+                "type": "Text",
+                "config": {
+                  "label": "Email",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

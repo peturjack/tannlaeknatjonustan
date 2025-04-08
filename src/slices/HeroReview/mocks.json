@@ -1,0 +1,48 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "lot",
+				"type": "Text"
+			},
+			"review_cards": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"card_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Purple",
+									"type": "Select"
+								}
+							],
+							[
+								"review_text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "next",
+									"type": "Text"
+								}
+							],
+							[
+								"reviewers_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "sick",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
