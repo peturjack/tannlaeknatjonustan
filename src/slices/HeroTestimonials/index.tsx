@@ -39,7 +39,7 @@ const HeroTestimonials: FC<HeroTestimonialsProps> = async ({ slice }) => {
             <div
               key={card.id}
               className={` intersect:motion-opacity-in-0 intersect:motion-translate-y-in-25
-                motion-duration-1000 motion-ease-in-out intersect-half
+                motion-duration-1000 motion-ease-in-out intersect-once
                 motion-delay-${index * 200}`}
             >
               <TestimonialCards
