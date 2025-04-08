@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-
+import { HiOutlineArrowCircleRight } from "react-icons/hi";
 import { PrismicNextLink } from "@prismicio/next";
 
 /**
@@ -21,16 +21,22 @@ const LinkSection: FC<LinkSectionProps> = async ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 max-w-3/4 mx-auto "
+      className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 max-w-3/4 mx-auto pb-15 md:pb-30"
     >
       {slice.primary.treatments.map((item, index) => (
-        <div key={index}>
-          <h3>{item.title}</h3>
-          {item.link.map((link) => (
-            <div key={link.key} className="flex flex-row">
-              <PrismicNextLink field={link} />
-            </div>
-          ))}
+        <div className="flex flex-col gap-4" key={index}>
+          <h3 className="text-primary-600">{item.title}</h3>
+          <div className="flex flex-col">
+            {item.link.map((link) => (
+              <div
+                key={link.key}
+                className="flex justify-between items-center py-2 border-b-2 border-primary-100/50 text-gray-600 group "
+              >
+                <PrismicNextLink className="w-full" field={link} />
+                <HiOutlineArrowCircleRight className="size-6 group-hover:motion-preset-oscillate text-gray-400 " />
+              </div>
+            ))}
+          </div>
         </div>
       ))}
     </section>
