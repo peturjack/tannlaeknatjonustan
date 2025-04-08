@@ -9,7 +9,7 @@ type Props = {
   nav: Content.NavbarDocument;
 };
 const Nav = ({ nav }: Props) => {
-  const [isOpen, setIsOpen] = useState<Boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const pathname = usePathname();
   const toggleOpen = () => {
     setIsOpen(!isOpen);
