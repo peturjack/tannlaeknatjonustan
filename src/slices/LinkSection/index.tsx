@@ -1,8 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { createClient } from "@/prismicio";
-import Link from "next/link";
+
 import { PrismicNextLink } from "@prismicio/next";
 
 /**

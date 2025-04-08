@@ -3,7 +3,6 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import TestimonialCards from "@/app/components/testimonials/TestimonialCards";
 import { createClient } from "@/prismicio";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 /**
  * Props for `HeroTestimonials`.

@@ -2,7 +2,7 @@ import { ImageField, KeyTextField, LinkField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import React from "react";
 import Button from "../button/Button";
-import Link from "next/link";
+
 type Props = {
   image: ImageField;
   title: string | KeyTextField;

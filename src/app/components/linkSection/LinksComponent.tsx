@@ -1,4 +1,4 @@
-import {
+/* import {
   Content,
   GroupField,
   KeyTextField,
@@ -32,3 +32,4 @@ const LinkComponent = ({ treatments }: Props) => {
 };
 
 export default LinkComponent;
+ */

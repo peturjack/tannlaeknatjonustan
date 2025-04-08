@@ -1,6 +1,5 @@
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
-import Nav from "./components/nav/Nav";
 import "./global.css";
 import { Kanit } from "next/font/google";
 import { Hind } from "next/font/google";
