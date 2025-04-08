@@ -5,6 +5,7 @@ import { HiOutlineMenu } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 type Props = {
   nav: Content.NavbarDocument;
 };
@@ -26,7 +27,12 @@ const Nav = ({ nav }: Props) => {
       {!isOpen ? (
         <nav className="h-[6rem] px-[2rem] flex justify-between items-center text-primary-base over">
           <div className="flex-1">
-            <PrismicNextImage field={nav.data.logo} />
+            <Link href={"/"}>
+              <PrismicNextImage
+                className="min-w-[100px]"
+                field={nav.data.logo}
+              />
+            </Link>
           </div>
           <div className="space-x-4 flex-1 text-center invisible md:visible">
             {nav.data.navlinks.map((item, index) => (
