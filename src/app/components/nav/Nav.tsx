@@ -28,7 +28,7 @@ const Nav = ({ nav }: Props) => {
           <div className="flex-1">
             <PrismicNextImage field={nav.data.logo} />
           </div>
-          <div className="space-x-4 flex-1 text-center hidden md:block">
+          <div className="space-x-4 flex-1 text-center invisible md:visible">
             {nav.data.navlinks.map((item, index) => (
               <PrismicNextLink
                 key={index}

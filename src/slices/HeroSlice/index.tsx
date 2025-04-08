@@ -21,9 +21,9 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
     switch (slice.variation) {
       case "default":
         return (
-          <div className="grid grid-cols-1 gap-30">
+          <div className="grid grid-cols-1 gap-15 md:gap-30">
             <video
-              className=" h-[40vw] w-full object-cover object-top aspect-video"
+              className=" w-full object-cover object-top aspect-video"
               src={slice.primary.hero_video.text}
               muted
               playsInline
@@ -71,7 +71,7 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
   };
   return (
     <section
-      className=" pb-30"
+      className=" pb-15 md:pb-30"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >

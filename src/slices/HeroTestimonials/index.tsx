@@ -22,7 +22,7 @@ const HeroTestimonials: FC<HeroTestimonialsProps> = async ({ slice }) => {
 
   return (
     <section
-      className="flex flex-col items-center gap-4 px-10 pb-30 
+      className="flex flex-col items-center gap-4 px-10 pb-15 md:pb-30 
       
       "
       data-slice-type={slice.slice_type}
@@ -39,7 +39,7 @@ const HeroTestimonials: FC<HeroTestimonialsProps> = async ({ slice }) => {
             <div
               key={card.id}
               className={`intersect:motion-opacity-in-0 intersect:motion-translate-y-in-25
-                motion-duration-1000 motion-ease-in-out intersect-once
+                motion-duration-1000 motion-ease-in-out
                 motion-delay-${index * 200}`}
             >
               <TestimonialCards
