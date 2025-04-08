@@ -21,7 +21,7 @@ const LinkSection: FC<LinkSectionProps> = async ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="grid grid-cols-3"
+      className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 max-w-3/4 mx-auto "
     >
       {slice.primary.treatments.map((item, index) => (
         <div key={index}>

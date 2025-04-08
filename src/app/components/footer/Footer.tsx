@@ -7,10 +7,10 @@ const Footer = async () => {
   const footer = await client.getAllByType("footer");
 
   return (
-    <footer className="flex py-15 px-20 w-full gap-20 bg-primary-700 text-white">
+    <footer className="flex flex-col md:flex-row py-15 px-20 w-full gap-10 md:gap-20 bg-primary-700 text-white">
       <section>
         <PrismicNextImage field={footer[0].data.logo} />
-        <div className="flex justify-center gap-2">
+        <div className="flex md:justify-center gap-2">
           {footer[0].data.socials.map((item, index) => (
             <PrismicNextImage
               className="size-10"
@@ -20,7 +20,7 @@ const Footer = async () => {
           ))}
         </div>
       </section>
-      <section className="flex gap-20">
+      <section className="flex flex-col md:flex-row gap-10 md:gap-20">
         <div className="flex flex-col gap-2">
           {footer[0].data.quick_links.map((item, index) => (
             <PrismicNextLink key={index} field={item.link} />
