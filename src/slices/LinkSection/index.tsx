@@ -21,10 +21,16 @@ const LinkSection: FC<LinkSectionProps> = async ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-20 max-w-3/4 mx-auto pb-15 md:pb-30"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-20 max-w-3/4 mx-auto pb-15 md:pb-30
+      
+      "
     >
       {slice.primary.treatments.map((item, index) => (
-        <div className="flex flex-col gap-4" key={index}>
+        <div
+          className="flex flex-col gap-4 intersect:motion-opacity-in-0 intersect:motion-translate-y-in-25
+                motion-duration-1000 motion-ease-in-out "
+          key={index}
+        >
           <h3 className="text-primary-600">{item.title}</h3>
           <div className="flex flex-col">
             {item.link.map((link) => (

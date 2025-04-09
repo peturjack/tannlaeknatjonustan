@@ -25,7 +25,10 @@ const Nav = ({ nav }: Props) => {
   return (
     <>
       {!isOpen ? (
-        <nav className="h-[6rem] px-[2rem] flex justify-between items-center text-primary-base over">
+        <nav
+          className="h-[6rem] px-[2rem] flex justify-between
+         items-center text-primary-base over"
+        >
           <div className="flex-1">
             <Link href={"/"}>
               <PrismicNextImage
@@ -51,7 +54,7 @@ const Nav = ({ nav }: Props) => {
             <div className="flex justify-end">
               <HiOutlineMenu
                 onClick={toggleOpen}
-                className="size-8 md:hidden  cursor-pointer"
+                className="size-8 md:hidden cursor-pointer"
               />
             </div>
           </div>
@@ -59,10 +62,8 @@ const Nav = ({ nav }: Props) => {
       ) : (
         <>
           <div
-            className={`bg-white absolute inset-0 z-30 text-primary-base motion-ease-in-out ${
-              isOpen
-                ? "motion-translate-x-in-100"
-                : "-motion-translate-x-out-100"
+            className={`bg-white fixed inset-0 z-30 text-primary-base motion-ease-in-out ${
+              isOpen ? "motion-translate-x-in-100" : "motion-translate-x-in-0"
             }`}
           >
             <div className="flex justify-end h-[6rem] px-[2rem] items-center over">

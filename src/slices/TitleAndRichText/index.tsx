@@ -14,12 +14,12 @@ export type TitleAndRichTextProps =
 const TitleAndRichText: FC<TitleAndRichTextProps> = ({ slice }) => {
   return (
     <section
-      className="flex flex-col items-center text-center pb-30"
+      className="flex flex-col gap-5 px-10 pb-30 "
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
       <h2>{slice.primary.title}</h2>
-      <div className="text-primary-600">
+      <div className="text-primary-600 prose prose-lg">
         <PrismicRichText
           field={slice.variation === "default" ? slice.primary.content : null}
         />

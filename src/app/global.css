@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tailwindcss-intersect";
 @plugin "tailwindcss-motion";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-dark: #030712;
