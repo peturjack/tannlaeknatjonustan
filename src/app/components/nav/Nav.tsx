@@ -47,10 +47,10 @@ const Nav = ({ nav }: Props) => {
               />
             ))}
           </div>
-          <div className="flex-1 justify-items-end ">
+          <div className="flex-1 ">
             <HiOutlineMenu
               onClick={toggleOpen}
-              className="size-8 md:hidden cursor-pointer"
+              className="size-8 md:hidden flex justify-self-end cursor-pointer"
             />
           </div>
         </nav>
