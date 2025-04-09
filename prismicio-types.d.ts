@@ -492,6 +492,7 @@ export type TestimonialCardsDocument<Lang extends string = string> =
   >;
 
 type TreatmentBlogDocumentDataSlicesSlice =
+  | RichTextSlice
   | TitleAndRichTextSlice
   | HeroSliceSlice;
 
@@ -890,11 +891,76 @@ export type HeroSliceSliceImageLeftAndTextRight = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *HeroSlice → Image top text below → Primary*
+ */
+export interface HeroSliceSliceImageTopTextBelowPrimary {
+  /**
+   * Image field in *HeroSlice → Image top text below → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.imageTopTextBelow.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *HeroSlice → Image top text below → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.imageTopTextBelow.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *HeroSlice → Image top text below → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.imageTopTextBelow.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * CTA Button field in *HeroSlice → Image top text below → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.imageTopTextBelow.primary.cta_button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_button: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    "Primary" | "Secondary"
+  >;
+}
+
+/**
+ * Image top text below variation for HeroSlice Slice
+ *
+ * - **API ID**: `imageTopTextBelow`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceSliceImageTopTextBelow = prismic.SharedSliceVariation<
+  "imageTopTextBelow",
+  Simplify<HeroSliceSliceImageTopTextBelowPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *HeroSlice*
  */
 type HeroSliceSliceVariation =
   | HeroSliceSliceDefault
-  | HeroSliceSliceImageLeftAndTextRight;
+  | HeroSliceSliceImageLeftAndTextRight
+  | HeroSliceSliceImageTopTextBelow;
 
 /**
  * HeroSlice Shared Slice
@@ -1448,9 +1514,11 @@ declare module "@prismicio/client" {
       HeroSliceSlice,
       HeroSliceSliceDefaultPrimary,
       HeroSliceSliceImageLeftAndTextRightPrimary,
+      HeroSliceSliceImageTopTextBelowPrimary,
       HeroSliceSliceVariation,
       HeroSliceSliceDefault,
       HeroSliceSliceImageLeftAndTextRight,
+      HeroSliceSliceImageTopTextBelow,
       HeroTestimonialsSlice,
       HeroTestimonialsSliceDefaultPrimary,
       HeroTestimonialsSliceVariation,
