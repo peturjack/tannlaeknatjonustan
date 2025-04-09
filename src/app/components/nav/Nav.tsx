@@ -34,11 +34,11 @@ const Nav = ({ nav }: Props) => {
               />
             </Link>
           </div>
-          <div className="space-x-4 flex-1 text-center invisible md:visible text-lg">
+          <div className="space-x-4 flex-1 text-center text-lg">
             {nav.data.navlinks.map((item, index) => (
               <PrismicNextLink
                 key={index}
-                className={`${
+                className={`hidden md:inline-flex ${
                   "/" + item.link.text?.toLowerCase() === pathname
                     ? "bg-primary-500 text-white py-2 px-3 "
                     : ""
