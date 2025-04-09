@@ -34,13 +34,13 @@ const Nav = ({ nav }: Props) => {
               />
             </Link>
           </div>
-          <div className="space-x-4 flex-1 text-center invisible md:visible">
+          <div className="space-x-4 flex-1 text-center invisible md:visible text-lg">
             {nav.data.navlinks.map((item, index) => (
               <PrismicNextLink
                 key={index}
                 className={`${
                   "/" + item.link.text?.toLowerCase() === pathname
-                    ? "border-b-3 border-primary-500 py-2 px-3 "
+                    ? "bg-primary-500 text-white py-2 px-3 "
                     : ""
                 }`}
                 field={item.link}
@@ -77,7 +77,7 @@ const Nav = ({ nav }: Props) => {
                   className={` intersect:motion-opacity-in-0 intersect:motion-translate-y-in-100
                 motion-duration-1000 motion-ease-in-out ${
                   "/" + item.link.text?.toLowerCase() === pathname
-                    ? "border-b-3 border-primary-500 py-2 px-3"
+                    ? " bg-primary-500 text-white py-2 px-3"
                     : ""
                 }`}
                   field={item.link}

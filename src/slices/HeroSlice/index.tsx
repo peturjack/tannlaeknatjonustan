@@ -23,8 +23,9 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
       case "default":
         return (
           <div className="grid items-center gap-15 md:gap-30">
-            <div>
+            <div className="h-[300px] md:h-full">
               <video
+                className="h-full w-full object-cover"
                 src={slice.primary.hero_video.text}
                 muted
                 playsInline
@@ -32,6 +33,7 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
                 loop={true}
               />
             </div>
+
             <div className="place-items-center space-y-8">
               <PrismicNextImage
                 className="w-[250px] md:w-[350px]"
