@@ -34,7 +34,7 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
               />
             </div>
 
-            <div className="place-items-center space-y-8">
+            <div className="flex flex-col items-center space-y-8">
               <PrismicNextImage
                 className="w-[250px] md:w-[350px]"
                 field={slice.primary.logo}
