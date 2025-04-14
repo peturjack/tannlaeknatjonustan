@@ -1,4 +1,4 @@
-/* import type { ReactNode } from "react";
+import type { ReactNode } from "react";
 import clsx from "clsx";
 
 type BoundedProps = {
@@ -20,15 +20,14 @@ export function Bounded({
     <Comp
       data-collapsible={collapsible}
       className={clsx(
-        "px-6",
+        "",
         yPadding === "sm" && "py-8 md:py-10",
-        yPadding === "base" && "py-20 md:py-28",
+        yPadding === "base" && "py-10 md:py-20",
         yPadding === "lg" && "py-32 md:py-48",
         className
       )}
     >
-      <div className="mx-auto w-full max-w-6xl">{children}</div>
+      <div className="w-3/4 max-w-[2000px] mx-auto">{children}</div>
     </Comp>
   );
 }
- */

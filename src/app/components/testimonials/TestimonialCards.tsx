@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "motion/react";
 import { ImageField, KeyTextField, LinkField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import React from "react";
@@ -11,7 +13,7 @@ type Props = {
   button?: LinkField;
 };
 
-const TestimonialCards = async ({
+const TestimonialCards = ({
   image,
   title,
   description,
@@ -19,20 +21,30 @@ const TestimonialCards = async ({
   button,
 }: Props) => {
   return (
-    <div className="flex flex-1 justify-self-center text-left flex-col gap-2">
-      <div className="md:w-full">
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7, ease: "easeInOut" }}
+      className="flex flex-1 justify-self-center text-left flex-col gap-3 "
+    >
+      <div className="md:w-full  rounded-2xl ">
         <PrismicNextImage className="aspect-auto rounded-2xl" field={image} />
       </div>
-      <h3 className="text-primary-600">{title}</h3>
-      <p className="line-clamp-3">{description}</p>
-      <div className="text-center">
-        <Button
-          className={`${isButton ? "block" : "hidden"}`}
-          text={button}
-          variant="primaryOutlined"
-        />
+      <div className="flex flex-col gap-4">
+        <div>
+          <h3 className="text-primary-600">{title}</h3>
+          <p className="line-clamp-3 text-gray-600">{description}</p>
+        </div>
+        <div>
+          <Button
+            className={`text-center ${isButton ? "block" : "hidden"}`}
+            text={button}
+            variant="primaryDefault"
+          />
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

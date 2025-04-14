@@ -46,16 +46,16 @@
 
 @layer components {
   .Purple {
-    @apply bg-[#C4A4D8];
+    @apply text-[#C4A4D8];
   }
   .Pink {
-    @apply bg-[#E1B9AF];
+    @apply text-[#E1B9AF];
   }
   .Green {
-    @apply bg-[#82D2B3];
+    @apply text-[#82D2B3];
   }
   .Yellow {
-    @apply bg-[#ECCD4D];
+    @apply text-[#ECCD4D];
   }
 }
 
@@ -63,10 +63,10 @@
   .reviewCard {
     @apply p-4 rounded-2xl space-y-4;
     p {
-      @apply text-lg text-primary-900;
+      @apply text-lg text-primary-600;
     }
-    span {
-      @apply text-primary-900;
-    }
+    /*  span {
+      @apply;
+    } */
   }
 }

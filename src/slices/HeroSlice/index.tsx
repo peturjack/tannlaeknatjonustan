@@ -3,6 +3,7 @@ import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import Button from "@/app/components/button/Button";
+import { Bounded } from "@/app/components/container/Bounded";
 
 /**
  * Props for `HeroSlice`.
@@ -16,14 +17,15 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
   /* 
      lg:px-[4.25rem]  in section className
      lg:rounded-[2rem] in video className
+     pb-15 md:pb-30 in main section
   */
 
   const renderContent = () => {
     switch (slice.variation) {
       case "default":
         return (
-          <div className="grid items-center gap-15 md:gap-30">
-            <div className="h-[300px] md:h-full">
+          <div className="flex flex-col gap-15 md:gap-30">
+            <div className="h-[300px] md:h-screen">
               <video
                 className="h-full w-full object-cover"
                 src={slice.primary.hero_video.text}
@@ -54,7 +56,7 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
       case "imageLeftAndTextRight":
         return (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-15 md:gap-30 items-center">
-            <div>
+            <div className="h-[300px] md:h-screen">
               <PrismicNextImage field={slice.primary.image} />
             </div>
             <div className="max-w-3/4 mx-auto lg:mx-0 flex flex-col gap-6">
@@ -73,28 +75,32 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
         );
       case "imageTopTextBelow":
         return (
-          <div className="grid gap-15 md:gap-30">
-            <PrismicNextImage field={slice.primary.image} />
-
-            <div className="max-w-3/4 mx-auto flex flex-col gap-6">
-              <h1>{slice.primary.title}</h1>
-              <p>{slice.primary.description}</p>
-              {isFilled.keyText(slice.primary.cta_button.text) ? (
-                <div>
-                  <Button
-                    variant="primaryDefault"
-                    text={slice.primary.cta_button}
-                  />
-                </div>
-              ) : null}
-            </div>
+          <div className="flex flex-col">
+            <PrismicNextImage
+              className="h-[300px] md:h-screen object-cover "
+              field={slice.primary.image}
+            />
+            <Bounded>
+              <div className=" flex flex-col gap-6">
+                <h1>{slice.primary.title}</h1>
+                <p>{slice.primary.description}</p>
+                {isFilled.keyText(slice.primary.cta_button.text) ? (
+                  <div>
+                    <Button
+                      variant="primaryDefault"
+                      text={slice.primary.cta_button}
+                    />
+                  </div>
+                ) : null}
+              </div>
+            </Bounded>
           </div>
         );
     }
   };
   return (
     <section
-      className="pb-15 md:pb-30"
+      className=""
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >

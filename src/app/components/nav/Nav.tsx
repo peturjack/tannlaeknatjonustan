@@ -1,11 +1,13 @@
 "use client";
 import { Content } from "@prismicio/client";
+import { motion } from "motion/react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { AnimatePresence } from "motion/react";
 type Props = {
   nav: Content.NavbarDocument;
 };
@@ -24,47 +26,46 @@ const Nav = ({ nav }: Props) => {
   }, [isOpen]);
   return (
     <>
-      {!isOpen ? (
-        <nav
-          className="h-[6rem] px-[2rem] flex justify-between
-         items-center text-primary-base over"
-        >
-          <div className="flex-1">
-            <Link href={"/"}>
-              <PrismicNextImage
-                className="min-w-[100px]"
-                field={nav.data.logo}
-              />
-            </Link>
+      <nav
+        className="h-[6rem] px-[2rem] flex justify-between
+         items-center text-primary-base  "
+      >
+        <div className="flex-1">
+          <Link href={"/"}>
+            <PrismicNextImage className="min-w-[100px]" field={nav.data.logo} />
+          </Link>
+        </div>
+        <div className="space-x-4 flex-1 text-center text-lg">
+          {nav.data.navlinks.map((item, index) => (
+            <PrismicNextLink
+              key={index}
+              className={`hidden md:inline-flex ${
+                "/" + item.link.text?.toLowerCase() === pathname
+                  ? "bg-primary-500 text-white py-2 px-3 "
+                  : ""
+              }`}
+              field={item.link}
+            />
+          ))}
+        </div>
+        <div className="flex-1 ">
+          <div className="flex justify-end">
+            <HiOutlineMenu
+              onClick={toggleOpen}
+              className="size-8 md:hidden cursor-pointer"
+            />
           </div>
-          <div className="space-x-4 flex-1 text-center text-lg">
-            {nav.data.navlinks.map((item, index) => (
-              <PrismicNextLink
-                key={index}
-                className={`hidden md:inline-flex ${
-                  "/" + item.link.text?.toLowerCase() === pathname
-                    ? "bg-primary-500 text-white py-2 px-3 "
-                    : ""
-                }`}
-                field={item.link}
-              />
-            ))}
-          </div>
-          <div className="flex-1 ">
-            <div className="flex justify-end">
-              <HiOutlineMenu
-                onClick={toggleOpen}
-                className="size-8 md:hidden cursor-pointer"
-              />
-            </div>
-          </div>
-        </nav>
-      ) : (
-        <>
-          <div
-            className={`bg-white fixed inset-0 z-30 text-primary-base motion-ease-in-out ${
-              isOpen ? "motion-translate-x-in-100" : "motion-translate-x-in-0"
-            }`}
+        </div>
+      </nav>
+
+      <AnimatePresence mode="wait">
+        {isOpen && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="bg-white fixed inset-0 z-30 text-primary-base"
           >
             <div className="flex justify-end h-[6rem] px-[2rem] items-center over">
               <IoCloseOutline
@@ -74,22 +75,28 @@ const Nav = ({ nav }: Props) => {
             </div>
             <ul className="flex flex-col items-center justify-center text-4xl gap-8">
               {nav.data.navlinks.map((item, index) => (
-                <PrismicNextLink
-                  onClick={toggleOpen}
+                <motion.div
                   key={index}
-                  className={` intersect:motion-opacity-in-0 intersect:motion-translate-y-in-100
-                motion-duration-1000 motion-ease-in-out ${
-                  "/" + item.link.text?.toLowerCase() === pathname
-                    ? " bg-primary-500 text-white py-2 px-3"
-                    : ""
-                }`}
-                  field={item.link}
-                />
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: index * 0.3 }}
+                >
+                  <PrismicNextLink
+                    onClick={toggleOpen}
+                    className={`${
+                      "/" + item.link.text?.toLowerCase() === pathname
+                        ? "bg-primary-500 text-white py-2 px-3"
+                        : ""
+                    }`}
+                    field={item.link}
+                  />
+                </motion.div>
               ))}
             </ul>
-          </div>
-        </>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { Bounded } from "@/app/components/container/Bounded";
 
 /**
  * Props for `TitleAndRichText`.
@@ -13,7 +14,8 @@ export type TitleAndRichTextProps =
  */
 const TitleAndRichText: FC<TitleAndRichTextProps> = ({ slice }) => {
   return (
-    <section
+    <Bounded
+      yPadding="sm"
       className="flex flex-col gap-5 px-10 pb-30 "
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
@@ -24,7 +26,7 @@ const TitleAndRichText: FC<TitleAndRichTextProps> = ({ slice }) => {
           field={slice.variation === "default" ? slice.primary.content : null}
         />
       </div>
-    </section>
+    </Bounded>
   );
 };
 
