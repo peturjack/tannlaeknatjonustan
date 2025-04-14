@@ -35,7 +35,7 @@ const HeroTestimonials: FC<HeroTestimonialsProps> = async ({ slice }) => {
        
         "
       >
-        {testimonials.map((card, index) => {
+        {testimonials.map((card) => {
           return (
             <div key={card.id}>
               <TestimonialCards
