@@ -24,10 +24,10 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
     switch (slice.variation) {
       case "default":
         return (
-          <div className="flex flex-col gap-15 md:gap-30">
-            <div className="h-[300px] md:h-screen">
+          <section className=" flex flex-col items-center gap-15 md:gap-30 ">
+            <div className="relative h-screen w-full">
               <video
-                className="h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
                 src={slice.primary.hero_video.text}
                 muted
                 playsInline
@@ -36,7 +36,7 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
               />
             </div>
 
-            <div className="flex flex-col items-center space-y-8">
+            <div className="flex flex-col items-center gap-8">
               <PrismicNextImage
                 className="w-[250px] md:w-[350px]"
                 field={slice.primary.logo}
@@ -51,7 +51,7 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
            `}
               />
             </div>
-          </div>
+          </section>
         );
       case "imageLeftAndTextRight":
         return (
@@ -77,7 +77,7 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
         return (
           <div className="flex flex-col">
             <PrismicNextImage
-              className="h-[300px] md:h-screen object-cover "
+              className="h-screen w-full object-cover "
               field={slice.primary.image}
             />
             <Bounded>
@@ -98,15 +98,7 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
         );
     }
   };
-  return (
-    <section
-      className=""
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      {renderContent()}
-    </section>
-  );
+  return renderContent();
 };
 
 export default HeroSlice;

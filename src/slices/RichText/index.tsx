@@ -1,23 +1,6 @@
 import { type FC } from "react";
 import { type Content } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
-import {
-  PrismicRichText,
-  type SliceComponentProps,
-  type JSXMapSerializer,
-} from "@prismicio/react";
-import styles from "./index.module.css";
-
-const components: JSXMapSerializer = {
-  hyperlink: ({ node, children }) => {
-    return <PrismicNextLink field={node.data}>{children}</PrismicNextLink>;
-  },
-  label: ({ node, children }) => {
-    if (node.data.label === "codespan") {
-      return <code>{children}</code>;
-    }
-  },
-};
+import { PrismicRichText, type SliceComponentProps } from "@prismicio/react";
 
 /**
  * Props for `RichText`.
@@ -29,8 +12,11 @@ type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
  */
 const RichText: FC<RichTextProps> = ({ slice }) => {
   return (
-    <section className={styles.richtext}>
-      <PrismicRichText field={slice.primary.content} components={components} />
+    <section
+      className=" w-3/4 mx-auto prose-base pb-20
+     prose-h3:text-primary-base prose-h3:font-bold "
+    >
+      <PrismicRichText field={slice.primary.content} />
     </section>
   );
 };

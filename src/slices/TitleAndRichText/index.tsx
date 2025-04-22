@@ -15,8 +15,7 @@ export type TitleAndRichTextProps =
 const TitleAndRichText: FC<TitleAndRichTextProps> = ({ slice }) => {
   return (
     <Bounded
-      yPadding="sm"
-      className="flex flex-col gap-5 px-10 pb-30 "
+      className="flex flex-col gap-5 "
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
