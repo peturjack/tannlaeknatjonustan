@@ -4,6 +4,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import Button from "@/app/components/button/Button";
 import { Bounded } from "@/app/components/container/Bounded";
+import clsx from "clsx";
 
 /**
  * Props for `HeroSlice`.
@@ -89,14 +90,15 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
               <div className=" flex flex-col gap-6">
                 <h1>{slice.primary.title}</h1>
                 <p className="leading-relaxed">{slice.primary.description}</p>
-                {isFilled.keyText(slice.primary.cta_button.text) ? (
-                  <div>
-                    <Button
-                      variant="primaryDefault"
-                      text={slice.primary.cta_button}
-                    />
-                  </div>
-                ) : null}
+
+                <div
+                  className={clsx(slice.primary.add_button ? "flex" : "hidden")}
+                >
+                  <Button
+                    variant="primaryDefault"
+                    text={slice.primary.cta_button}
+                  />
+                </div>
               </div>
             </Bounded>
           </div>

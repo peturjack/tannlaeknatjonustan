@@ -127,6 +127,15 @@
             "placeholder": ""
           }
         },
+        "add_button": {
+          "type": "Boolean",
+          "config": {
+            "label": "Add Button",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
         "cta_button": {
           "type": "Link",
           "config": {

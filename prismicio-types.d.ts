@@ -925,6 +925,17 @@ export interface HeroSliceSliceImageTopTextBelowPrimary {
   description: prismic.KeyTextField;
 
   /**
+   * Add Button field in *HeroSlice → Image top text below → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero_slice.imageTopTextBelow.primary.add_button
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  add_button: prismic.BooleanField;
+
+  /**
    * CTA Button field in *HeroSlice → Image top text below → Primary*
    *
    * - **Field Type**: Link

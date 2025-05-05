@@ -34,7 +34,9 @@ const TestimonialCards = ({
       <div className="flex flex-col gap-4">
         <div>
           <h3 className="text-primary-600">{title}</h3>
-          <p className="line-clamp-3 text-gray-600">{description}</p>
+          <p className="line-clamp-3 text-gray-600 leading-relaxed">
+            {description}
+          </p>
         </div>
         <div>
           <Button
