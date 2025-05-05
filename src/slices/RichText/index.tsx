@@ -14,7 +14,7 @@ const RichText: FC<RichTextProps> = ({ slice }) => {
   return (
     <section
       className=" w-3/4 mx-auto prose-base pb-20
-     prose-h3:text-primary-base prose-h3:font-bold prose-p:text-gray-600"
+     prose-h3:text-primary-600 prose-h3:font-bold prose-p:text-gray-600"
     >
       <PrismicRichText field={slice.primary.content} />
     </section>

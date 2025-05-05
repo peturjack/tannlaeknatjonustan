@@ -30,6 +30,8 @@
   --text-h2: 32px;
   --font-headings: Kanit;
   --font-body: Hind;
+
+  --header-height: 6rem;
 }
 
 @layer base {

@@ -24,10 +24,10 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
     switch (slice.variation) {
       case "default":
         return (
-          <section className=" flex flex-col items-center gap-15 md:gap-30 ">
-            <div className="relative h-screen w-full">
+          <section className="min-h-screen flex flex-col items-center">
+            <div className="relative h-screen w-full mt-[var(--header-height)]">
               <video
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-[calc(100%-var(--header-height))] w-full object-cover object-top"
                 src={slice.primary.hero_video.text}
                 muted
                 playsInline
@@ -56,8 +56,11 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
       case "imageLeftAndTextRight":
         return (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-15 md:gap-30 items-center">
-            <div className="h-[300px] md:h-screen">
-              <PrismicNextImage field={slice.primary.image} />
+            <div className="h-screen">
+              <PrismicNextImage
+                className="mt-[var(--header-height)] h-[calc(100%-var(--header-height))]"
+                field={slice.primary.image}
+              />
             </div>
             <div className="max-w-3/4 mx-auto lg:mx-0 flex flex-col gap-6">
               <h1>{slice.primary.title}</h1>
@@ -75,15 +78,17 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
         );
       case "imageTopTextBelow":
         return (
-          <div className="flex flex-col">
-            <PrismicNextImage
-              className="h-screen w-full object-cover "
-              field={slice.primary.image}
-            />
+          <div className="min-h-screen flex flex-col">
+            <div className="h-screen">
+              <PrismicNextImage
+                className=" mt-[var(--header-height)] h-[calc(100%-var(--header-height))] w-full object-cover object-top "
+                field={slice.primary.image}
+              />
+            </div>
             <Bounded>
               <div className=" flex flex-col gap-6">
                 <h1>{slice.primary.title}</h1>
-                <p>{slice.primary.description}</p>
+                <p className="leading-relaxed">{slice.primary.description}</p>
                 {isFilled.keyText(slice.primary.cta_button.text) ? (
                   <div>
                     <Button

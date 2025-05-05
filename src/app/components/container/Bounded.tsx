@@ -3,7 +3,8 @@ import clsx from "clsx";
 
 type BoundedProps = {
   as?: "div" | "section" | "header";
-  yPadding?: "sm" | "base" | "lg";
+  yPadding?: "sm" | "base" | "lg" | "noT-sm";
+
   collapsible?: boolean;
   className?: string;
   children?: ReactNode;
@@ -24,6 +25,7 @@ export function Bounded({
         yPadding === "sm" && "py-8 md:py-10",
         yPadding === "base" && "py-7.5 md:py-15",
         yPadding === "lg" && "py-32 md:py-48",
+        yPadding === "noT-sm" && "pb-8 md:pb-10",
         className
       )}
     >
