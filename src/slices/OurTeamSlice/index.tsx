@@ -32,9 +32,9 @@ const OurTeamSlice: FC<OurTeamSliceProps> = ({ slice }) => {
               key={index}
               className="flex items-center h-full gap-4 text-primary-700"
             >
-              <div className="bg-secondary-700 rounded-4xl">
+              <div className="bg-secondary-700 relative inset-0 h-full w-50 rounded-4xl ">
                 <PrismicNextImage
-                  className="object-cover  -mt-12"
+                  className="object-cover absolute inset-x-0 h-[140%]  w-full bottom-0"
                   field={item.image}
                 />
               </div>
