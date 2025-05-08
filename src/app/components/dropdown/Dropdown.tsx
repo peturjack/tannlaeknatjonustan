@@ -29,8 +29,8 @@ const useActiveIndex = (index: number) => {
 };
 
 type Props = {
-  question: KeyTextField;
-  answer: KeyTextField;
+  question?: KeyTextField;
+  answer?: KeyTextField;
   index: number;
 };
 
