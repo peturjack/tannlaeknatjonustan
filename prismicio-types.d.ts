@@ -1031,11 +1031,11 @@ export type HeroTestimonialsSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *LinkSection → Default → Primary → Treatments*
+ * Item in *LinkSection → Default → Primary → List*
  */
 export interface LinkSectionSliceDefaultPrimaryTreatmentsItem {
   /**
-   * Title field in *LinkSection → Default → Primary → Treatments*
+   * Title field in *LinkSection → Default → Primary → List*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1045,7 +1045,7 @@ export interface LinkSectionSliceDefaultPrimaryTreatmentsItem {
   title: prismic.KeyTextField;
 
   /**
-   * Link field in *LinkSection → Default → Primary → Treatments*
+   * Link field in *LinkSection → Default → Primary → List*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -1058,11 +1058,36 @@ export interface LinkSectionSliceDefaultPrimaryTreatmentsItem {
 }
 
 /**
+ * Item in *LinkSection → dropdown list → Primary → List*
+ */
+export interface LinkSectionSliceDropdownListPrimaryTreatmentsItem {
+  /**
+   * question field in *LinkSection → dropdown list → Primary → List*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: add a common question
+   * - **API ID Path**: link_section.dropdownList.primary.treatments[].question
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * answer field in *LinkSection → dropdown list → Primary → List*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: answer to the question
+   * - **API ID Path**: link_section.dropdownList.primary.treatments[].answer
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  answer: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *LinkSection → Default → Primary*
  */
 export interface LinkSectionSliceDefaultPrimary {
   /**
-   * Treatments field in *LinkSection → Default → Primary*
+   * List field in *LinkSection → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -1088,9 +1113,51 @@ export type LinkSectionSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *LinkSection → dropdown list → Primary*
+ */
+export interface LinkSectionSliceDropdownListPrimary {
+  /**
+   * title field in *LinkSection → dropdown list → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_section.dropdownList.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * List field in *LinkSection → dropdown list → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_section.dropdownList.primary.treatments[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  treatments: prismic.GroupField<
+    Simplify<LinkSectionSliceDropdownListPrimaryTreatmentsItem>
+  >;
+}
+
+/**
+ * dropdown list variation for LinkSection Slice
+ *
+ * - **API ID**: `dropdownList`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LinkSectionSliceDropdownList = prismic.SharedSliceVariation<
+  "dropdownList",
+  Simplify<LinkSectionSliceDropdownListPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *LinkSection*
  */
-type LinkSectionSliceVariation = LinkSectionSliceDefault;
+type LinkSectionSliceVariation =
+  | LinkSectionSliceDefault
+  | LinkSectionSliceDropdownList;
 
 /**
  * LinkSection Shared Slice
@@ -1537,8 +1604,11 @@ declare module "@prismicio/client" {
       LinkSectionSlice,
       LinkSectionSliceDefaultPrimaryTreatmentsItem,
       LinkSectionSliceDefaultPrimary,
+      LinkSectionSliceDropdownListPrimaryTreatmentsItem,
+      LinkSectionSliceDropdownListPrimary,
       LinkSectionSliceVariation,
       LinkSectionSliceDefault,
+      LinkSectionSliceDropdownList,
       LocationSliceSlice,
       LocationSliceSliceDefaultPrimary,
       LocationSliceSliceVariation,

@@ -39,10 +39,10 @@
     @apply text-h1 text-primary-base font-medium;
   }
   h2 {
-    @apply text-h2 text-primary-600;
+    @apply text-2xl md:text-h2 text-primary-600;
   }
   h3 {
-    @apply text-2xl;
+    @apply text-xl md:text-2xl;
   }
 }
 

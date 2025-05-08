@@ -15,7 +15,7 @@
         "treatments": {
           "type": "Group",
           "config": {
-            "label": "Treatments",
+            "label": "List",
             "repeat": true,
             "fields": {
               "title": {
@@ -34,6 +34,47 @@
                   "allowTargetBlank": true,
                   "allowText": true,
                   "repeat": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "dropdownList",
+      "name": "dropdown list",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": ""
+          }
+        },
+        "treatments": {
+          "type": "Group",
+          "config": {
+            "label": "List",
+            "repeat": true,
+            "fields": {
+              "question": {
+                "type": "Text",
+                "config": {
+                  "label": "question",
+                  "placeholder": "add a common question"
+                }
+              },
+              "answer": {
+                "type": "Text",
+                "config": {
+                  "label": "answer",
+                  "placeholder": "answer to the question"
                 }
               }
             }

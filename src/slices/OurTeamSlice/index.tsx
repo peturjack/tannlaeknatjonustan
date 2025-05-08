@@ -14,7 +14,7 @@ export type OurTeamSliceProps = SliceComponentProps<Content.OurTeamSliceSlice>;
  */
 const OurTeamSlice: FC<OurTeamSliceProps> = ({ slice }) => {
   return (
-    <Bounded>
+    <Bounded yPadding="base">
       <section
         className="flex flex-col justify-center gap-10"
         data-slice-type={slice.slice_type}

@@ -24,8 +24,8 @@
 									"type": "Link",
 									"value": [
 										{
-											"__TYPE__": "LinkContent",
 											"key": "6a9a791b-7019-450f-8a83-e4b9cf69620d",
+											"__TYPE__": "LinkContent",
 											"value": {
 												"__TYPE__": "ExternalLink",
 												"url": "http://google.com",
@@ -41,5 +41,48 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "dropdownList",
+		"primary": {
+			"treatments": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"question",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "scientist",
+									"type": "Text"
+								}
+							],
+							[
+								"answer",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "bottom",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "neck",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]
