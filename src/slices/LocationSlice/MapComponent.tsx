@@ -1,6 +1,6 @@
 "use client";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L, { Icon } from "leaflet";
+import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 // Fix for default marker icon
