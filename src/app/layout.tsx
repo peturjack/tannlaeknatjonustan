@@ -1,6 +1,7 @@
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import "./global.css";
+import "leaflet/dist/leaflet.css";
 import { Kanit } from "next/font/google";
 import { Hind } from "next/font/google";
 import Footer from "./components/footer/Footer";

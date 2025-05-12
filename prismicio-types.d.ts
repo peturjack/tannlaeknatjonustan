@@ -115,6 +115,7 @@ export type FooterDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | LocationSliceSlice
   | TitleAndRichTextSlice
   | HeroReviewSlice
   | HeroTestimonialsSlice
