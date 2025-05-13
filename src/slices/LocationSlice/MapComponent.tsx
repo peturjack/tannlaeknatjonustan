@@ -20,7 +20,6 @@ L.Icon.Default.mergeOptions({
 interface MapComponentProps {
   position: [number, number];
 }
-
 const MapComponent = ({ position }: MapComponentProps) => {
   return (
     <MapContainer
