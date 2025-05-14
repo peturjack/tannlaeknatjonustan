@@ -27,7 +27,7 @@ const Nav = ({ nav }: Props) => {
   return (
     <>
       <nav
-        className="h-[var(--header-height)] px-[2rem] fixed left-0 right-0 top-0 z-50 bg-white flex justify-between
+        className="h-[var(--header-height)] px-[2rem] fixed left-0 right-0 top-0 z-2000 bg-white flex justify-between
          items-center text-primary-base  "
       >
         <div className="flex-1">

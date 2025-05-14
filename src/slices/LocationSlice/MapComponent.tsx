@@ -24,7 +24,7 @@ const MapComponent = ({ position }: MapComponentProps) => {
   return (
     <MapContainer
       center={position}
-      zoom={20}
+      zoom={17}
       scrollWheelZoom={false}
       style={{ height: "100%", width: "100%" }}
     >
