@@ -2,7 +2,7 @@
 import { Content } from "@prismicio/client";
 import { motion } from "motion/react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { HiOutlineMenu, HiOutlineSearch } from "react-icons/hi";
+import { HiOutlineMenu } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -52,7 +52,6 @@ const Nav = ({ nav }: Props) => {
               ))}
             </div>
             <div className="flex justify-end gap-4">
-              <HiOutlineSearch className="size-8" />
               <HiOutlineMenu
                 onClick={toggleOpen}
                 className="size-8 lg:hidden cursor-pointer"
