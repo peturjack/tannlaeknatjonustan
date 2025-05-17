@@ -27,22 +27,27 @@ const LinkSection: FC<LinkSectionProps> = async ({ slice }) => {
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
           >
-            <div className="flex justify-between">
+            <h3 className="text-primary-600 mb-4">{slice.primary.title}</h3>
+            <div className="flex flex-col md:flex-row justify-between gap-8">
+              {" "}
+              {/* Add gap-8 here for columns */}
               {slice.primary.treatments.map((item, index) => (
                 <div
-                  className="flex flex-col  gap-4 intersect:motion-opacity-in-0 intersect:motion-translate-y-in-25
-                motion-duration-1000 motion-ease-in-out intersect-once"
+                  className="flex flex-col w-full intersect:motion-opacity-in-0
+                  intersect:motion-translate-y-in-25
+                  motion-duration-1000 motion-ease-in-out intersect-once"
                   key={index}
                 >
-                  <h3 className="text-primary-600">{item.title}</h3>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col gap-4">
+                    {/* Add gap-4 here for rows */}
                     {item.link.map((link) => (
                       <div
                         key={link.key}
-                        className="flex justify-between items-center py-2 border-b-2 border-primary-100/50 text-gray-600 group "
+                        className="flex items-center md:gap-10 py-2 border-b-2
+                        border-primary-100/50 text-gray-600 group"
                       >
                         <PrismicNextLink className="w-full" field={link} />
-                        <HiOutlineArrowCircleRight className="size-6 group-hover:motion-preset-oscillate text-gray-400 " />
+                        <HiOutlineArrowCircleRight className="size-6 group-hover:motion-preset-oscillate text-gray-400" />
                       </div>
                     ))}
                   </div>

@@ -325,6 +325,67 @@ export type NavbarDocument<Lang extends string = string> =
     Lang
   >;
 
+type NewsDocumentDataSlicesSlice = never;
+
+/**
+ * Content for News documents
+ */
+interface NewsDocumentData {
+  /**
+   * Slice Zone field in *News*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<NewsDocumentDataSlicesSlice> /**
+   * Meta Title field in *News*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: news.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *News*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: news.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *News*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * News document from Prismic
+ *
+ * - **API ID**: `news`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NewsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<NewsDocumentData>, "news", Lang>;
+
 type PageDocumentDataSlicesSlice =
   | SideBySideInfoSlice
   | LinkSectionSlice
@@ -578,6 +639,7 @@ export type AllDocumentTypes =
   | HomepageDocument
   | MedferdirDocument
   | NavbarDocument
+  | NewsDocument
   | PageDocument
   | TestimonialCardsDocument
   | TreatmentBlogDocument;
@@ -1089,6 +1151,16 @@ export interface LinkSectionSliceDropdownListPrimaryTreatmentsItem {
  * Primary content in *LinkSection → Default → Primary*
  */
 export interface LinkSectionSliceDefaultPrimary {
+  /**
+   * Title field in *LinkSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
   /**
    * List field in *LinkSection → Default → Primary*
    *
@@ -1705,6 +1777,9 @@ declare module "@prismicio/client" {
       NavbarDocumentData,
       NavbarDocumentDataNavlinksItem,
       NavbarDocumentDataSlicesSlice,
+      NewsDocument,
+      NewsDocumentData,
+      NewsDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

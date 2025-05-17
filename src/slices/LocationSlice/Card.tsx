@@ -1,9 +1,7 @@
 import React from "react";
 import { HiClock, HiCalendar } from "react-icons/hi";
 
-type Props = {};
-
-const Card = (props: Props) => {
+const Card = () => {
   return (
     <div className="p-4 rounded-lg bg-white min-w-[220px] max-w-xs ">
       <div className="flex flex-col gap-3">

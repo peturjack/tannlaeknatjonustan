@@ -1,0 +1,7 @@
+create news and news template - Finished on this date 5/17/2025 - todo
+fix navbar issue with links pathname - todo
+make changes to hero slice - todo
+add another variation of a hero slice - todo
+make changes to about us page styling wise - todo
+link all of the buttons to each page - todo
+make the hero testimonial cards link work - todo
