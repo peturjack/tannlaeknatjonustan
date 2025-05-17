@@ -21,7 +21,10 @@ const TitleAndRichText: FC<TitleAndRichTextProps> = ({ slice }) => {
     >
       <div className="space-y-6">
         <h2>{slice.primary.title}</h2>
-        <div className=" prose-base prose-lg prose-h3:text-primary-600 prose-p:leading-relaxed prose-p:text-gray-600">
+        <div
+          className=" prose-base prose-lg prose-h3:text-primary-600
+         prose-p:leading-relaxed prose-p:text-gray-600"
+        >
           <PrismicRichText
             field={slice.variation === "default" ? slice.primary.content : null}
           />

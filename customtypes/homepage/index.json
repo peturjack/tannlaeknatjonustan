@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "side_by_side_info": {
+              "type": "SharedSlice"
+            },
             "location_slice": {
               "type": "SharedSlice"
             },

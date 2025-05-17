@@ -29,7 +29,9 @@ export function Bounded({
         className
       )}
     >
-      <div className="w-3/4 max-w-[2000px] mx-auto">{children}</div>
+      <div className="w-full px-[1.5rem] max-w-[2000px] mx-auto">
+        {children}
+      </div>
     </Comp>
   );
 }

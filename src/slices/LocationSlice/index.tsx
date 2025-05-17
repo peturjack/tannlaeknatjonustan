@@ -3,6 +3,7 @@ import { FC, useMemo } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import dynamic from "next/dynamic";
+import Clickable from "./Clickable";
 
 // Dynamically import the map component with no SSR
 const MapWithNoSSR = dynamic(() => import("./MapComponent"), {
@@ -40,7 +41,10 @@ const LocationSlice: FC<LocationSliceProps> = ({ slice }) => {
       </div>
 
       {/* Information Section */}
-      <div className=" lg:h-[600px] flex flex-col justify-center p-6 ">
+
+      <div className=" lg:h-[600px] flex flex-col gap-6 ">
+        <Clickable />
+
         <div className="flex flex-col  gap-6 text-gray-700">
           <div className="flex flex-col justify-center">
             <h3 className=" font-semibold text-primary-500">Nafn á stofu</h3>

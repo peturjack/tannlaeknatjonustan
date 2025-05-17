@@ -26,9 +26,9 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
       case "default":
         return (
           <section className="min-h-screen flex flex-col items-center">
-            <div className="relative h-screen w-full mt-[var(--header-height)]">
+            <div className="relative h-screen w-full mt-[var(--header-height)] ">
               <video
-                className="absolute inset-0 h-[calc(100%-var(--header-height))] w-full object-cover object-top"
+                className="absolute inset-0  h-[calc(100%-var(--header-height))] w-full lg:w-[90%] lg:rounded-[2rem] mx-auto object-cover object-top"
                 src={slice.primary.hero_video.text}
                 muted
                 playsInline
@@ -56,13 +56,12 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
         );
       case "imageLeftAndTextRight":
         return (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-15 md:gap-30 items-center">
-            <div className="h-screen">
-              <PrismicNextImage
-                className="mt-[var(--header-height)] h-[calc(100%-var(--header-height))]"
-                field={slice.primary.image}
-              />
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-15 md:gap-30 items-center min-h-screen">
+            <PrismicNextImage
+              className=" mt-[var(--header-height)] h-[calc(100%-var(--header-height))] object-cover"
+              field={slice.primary.image}
+            />
+
             <div className="max-w-3/4 mx-auto lg:mx-0 flex flex-col gap-6">
               <h1>{slice.primary.title}</h1>
               <p>{slice.primary.description}</p>

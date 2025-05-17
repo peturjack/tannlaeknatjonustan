@@ -2,7 +2,7 @@
 import { Content } from "@prismicio/client";
 import { motion } from "motion/react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { HiOutlineMenu } from "react-icons/hi";
+import { HiOutlineMenu, HiOutlineSearch } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -30,30 +30,34 @@ const Nav = ({ nav }: Props) => {
         className="h-[var(--header-height)] px-[2rem] fixed left-0 right-0 top-0 z-2000 bg-white flex justify-between
          items-center text-primary-base  "
       >
-        <div className="flex-1">
+        <div>
           <Link href={"/"}>
             <PrismicNextImage className="min-w-[100px]" field={nav.data.logo} />
           </Link>
         </div>
-        <div className="space-x-4 flex-1 text-center text-lg">
-          {nav.data.navlinks.map((item, index) => (
-            <PrismicNextLink
-              key={index}
-              className={`hidden md:inline-flex ${
-                "/" + item.link.text?.toLowerCase() === pathname
-                  ? "bg-primary-500 text-white py-2 px-3 "
-                  : ""
-              }`}
-              field={item.link}
-            />
-          ))}
-        </div>
-        <div className="flex-1 ">
-          <div className="flex justify-end">
-            <HiOutlineMenu
-              onClick={toggleOpen}
-              className="size-8 md:hidden cursor-pointer"
-            />
+
+        <div>
+          <div className="flex items-center gap-[2rem] lg:gap-[5rem]">
+            <div className="space-x-[3rem] text-center text-lg">
+              {nav.data.navlinks.map((item, index) => (
+                <PrismicNextLink
+                  key={index}
+                  className={`hidden lg:inline-flex ${
+                    "/" + item.link.text?.toLowerCase() === pathname
+                      ? "bg-primary-500 text-white py-2 px-3 "
+                      : ""
+                  }`}
+                  field={item.link}
+                />
+              ))}
+            </div>
+            <div className="flex justify-end gap-4">
+              <HiOutlineSearch className="size-8" />
+              <HiOutlineMenu
+                onClick={toggleOpen}
+                className="size-8 lg:hidden cursor-pointer"
+              />
+            </div>
           </div>
         </div>
       </nav>
@@ -65,7 +69,7 @@ const Nav = ({ nav }: Props) => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="bg-white fixed inset-0 z-30 text-primary-base"
+            className="bg-white fixed inset-0 z-3000 text-primary-base"
           >
             <div className="flex justify-end h-[6rem] px-[2rem] items-center over">
               <IoCloseOutline

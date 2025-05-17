@@ -115,6 +115,7 @@ export type FooterDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | SideBySideInfoSlice
   | LocationSliceSlice
   | TitleAndRichTextSlice
   | HeroReviewSlice
@@ -325,6 +326,7 @@ export type NavbarDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | SideBySideInfoSlice
   | LinkSectionSlice
   | OurTeamSliceSlice
   | AlternateGridSlice
@@ -1385,6 +1387,100 @@ export type RichTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *SideBySideInfo → Illustration Left, Text Right → Primary → Information Blocks*
+ */
+export interface SideBySideInfoSliceIllustrationLeftTextRightPrimaryInfoGroupItem {
+  /**
+   * Heading field in *SideBySideInfo → Illustration Left, Text Right → Primary → Information Blocks*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_by_side_info.illustration_left_text_right.primary.info_group[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *SideBySideInfo → Illustration Left, Text Right → Primary → Information Blocks*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_by_side_info.illustration_left_text_right.primary.info_group[].content
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  content: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *SideBySideInfo → Illustration Left, Text Right → Primary*
+ */
+export interface SideBySideInfoSliceIllustrationLeftTextRightPrimary {
+  /**
+   * Title field in *SideBySideInfo → Illustration Left, Text Right → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_by_side_info.illustration_left_text_right.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Illustration field in *SideBySideInfo → Illustration Left, Text Right → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_by_side_info.illustration_left_text_right.primary.illustration
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  illustration: prismic.ImageField<never>;
+
+  /**
+   * Information Blocks field in *SideBySideInfo → Illustration Left, Text Right → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_by_side_info.illustration_left_text_right.primary.info_group[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  info_group: prismic.GroupField<
+    Simplify<SideBySideInfoSliceIllustrationLeftTextRightPrimaryInfoGroupItem>
+  >;
+}
+
+/**
+ * Illustration Left, Text Right variation for SideBySideInfo Slice
+ *
+ * - **API ID**: `illustration_left_text_right`
+ * - **Description**: Displays an illustration on the left and structured info (title, description, details) on the right.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SideBySideInfoSliceIllustrationLeftTextRight =
+  prismic.SharedSliceVariation<
+    "illustration_left_text_right",
+    Simplify<SideBySideInfoSliceIllustrationLeftTextRightPrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *SideBySideInfo*
+ */
+type SideBySideInfoSliceVariation =
+  SideBySideInfoSliceIllustrationLeftTextRight;
+
+/**
+ * SideBySideInfo Shared Slice
+ *
+ * - **API ID**: `side_by_side_info`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SideBySideInfoSlice = prismic.SharedSlice<
+  "side_by_side_info",
+  SideBySideInfoSliceVariation
+>;
+
+/**
  * Primary content in *TitleAndRichText → Default → Primary*
  */
 export interface TitleAndRichTextSliceDefaultPrimary {
@@ -1451,11 +1547,50 @@ export type TitleAndRichTextSliceTitle = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TitleAndRichText → heading and text → Primary*
+ */
+export interface TitleAndRichTextSliceHeadingAndTextPrimary {
+  /**
+   * Title field in *TitleAndRichText → heading and text → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: title_and_rich_text.headingAndText.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Text field in *TitleAndRichText → heading and text → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: title_and_rich_text.headingAndText.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * heading and text variation for TitleAndRichText Slice
+ *
+ * - **API ID**: `headingAndText`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TitleAndRichTextSliceHeadingAndText = prismic.SharedSliceVariation<
+  "headingAndText",
+  Simplify<TitleAndRichTextSliceHeadingAndTextPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *TitleAndRichText*
  */
 type TitleAndRichTextSliceVariation =
   | TitleAndRichTextSliceDefault
-  | TitleAndRichTextSliceTitle;
+  | TitleAndRichTextSliceTitle
+  | TitleAndRichTextSliceHeadingAndText;
 
 /**
  * TitleAndRichText Shared Slice
@@ -1623,12 +1758,19 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      SideBySideInfoSlice,
+      SideBySideInfoSliceIllustrationLeftTextRightPrimaryInfoGroupItem,
+      SideBySideInfoSliceIllustrationLeftTextRightPrimary,
+      SideBySideInfoSliceVariation,
+      SideBySideInfoSliceIllustrationLeftTextRight,
       TitleAndRichTextSlice,
       TitleAndRichTextSliceDefaultPrimary,
       TitleAndRichTextSliceTitlePrimary,
+      TitleAndRichTextSliceHeadingAndTextPrimary,
       TitleAndRichTextSliceVariation,
       TitleAndRichTextSliceDefault,
       TitleAndRichTextSliceTitle,
+      TitleAndRichTextSliceHeadingAndText,
       TreatmentHeroSlice,
       TreatmentHeroSliceDefaultPrimary,
       TreatmentHeroSliceVariation,

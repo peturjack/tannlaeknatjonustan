@@ -11,6 +11,7 @@ export const components = {
   location_slice: dynamic(() => import("./LocationSlice")),
   our_team_slice: dynamic(() => import("./OurTeamSlice")),
   rich_text: dynamic(() => import("./RichText")),
+  side_by_side_info: dynamic(() => import("./SideBySideInfo")),
   title_and_rich_text: dynamic(() => import("./TitleAndRichText")),
   treatment_hero: dynamic(() => import("./TreatmentHero")),
 };
