@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { PrismicRichText } from "@prismicio/react";
 import { createClient } from "@/prismicio";
-import { Metadata } from "next";
 import { PrismicNextImage } from "@prismicio/next";
 
 type Params = { uid: string };
