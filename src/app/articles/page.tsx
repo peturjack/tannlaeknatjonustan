@@ -1,12 +1,11 @@
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 import { asImageSrc } from "@prismicio/client";
-import { SliceZone } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import Link from "next/link";
 
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
+
 import { Bounded } from "../components/container/Bounded";
 
 export default async function Page() {

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { PrismicRichText } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { Metadata } from "next";
+import { PrismicNextImage } from "@prismicio/next";
 
 type Params = { uid: string };
 
@@ -65,10 +66,9 @@ export default async function BlogPostPage({ params }: { params: Params }) {
   return (
     <article className="max-w-3xl mx-auto mt-[var(--header-height)] pb-10 px-4">
       {post.data.cover_image?.url && (
-        <img
-          src={post.data.cover_image.url}
-          alt={post.data.cover_image.alt || ""}
+        <PrismicNextImage
           className="w-full h-auto rounded-xl mb-6"
+          field={post.data.cover_image}
         />
       )}
 
