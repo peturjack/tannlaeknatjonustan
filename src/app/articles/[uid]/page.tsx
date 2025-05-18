@@ -6,15 +6,6 @@ import { PrismicNextImage } from "@prismicio/next";
 
 type Params = { uid: string };
 
-// Define a type for your article data if you want stronger typing
-type ArticleData = {
-  title?: string;
-  excerpt?: string;
-  cover_image?: { url?: string; alt?: string };
-  date?: string;
-  content?: any;
-};
-
 // Optional: set dynamic metadata for SEO
 export async function generateMetadata({
   params,
