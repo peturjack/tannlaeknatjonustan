@@ -4,6 +4,171 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type ArticleArchieveDocumentDataSlicesSlice =
+  | TitleAndRichTextSlice
+  | RichTextSlice;
+
+/**
+ * Content for Article archieve documents
+ */
+interface ArticleArchieveDocumentData {
+  /**
+   * title field in *Article archieve*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_archieve.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * text field in *Article archieve*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_archieve.text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Article archieve*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_archieve.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ArticleArchieveDocumentDataSlicesSlice> /**
+   * Meta Title field in *Article archieve*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: article_archieve.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Article archieve*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: article_archieve.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Article archieve*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_archieve.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Article archieve document from Prismic
+ *
+ * - **API ID**: `article_archieve`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticleArchieveDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ArticleArchieveDocumentData>,
+    "article_archieve",
+    Lang
+  >;
+
+/**
+ * Content for Article Posts documents
+ */
+interface ArticlePostsDocumentData {
+  /**
+   * Cover image field in *Article Posts*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_posts.cover_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  cover_image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Article Posts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_posts.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Date field in *Article Posts*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_posts.date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date: prismic.DateField;
+
+  /**
+   * Excerpt field in *Article Posts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A short description
+   * - **API ID Path**: article_posts.excerpt
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  excerpt: prismic.KeyTextField;
+
+  /**
+   * Content field in *Article Posts*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_posts.content
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Article Posts document from Prismic
+ *
+ * - **API ID**: `article_posts`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticlePostsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ArticlePostsDocumentData>,
+    "article_posts",
+    Lang
+  >;
+
 /**
  * Item in *footer → Quick Links*
  */
@@ -185,64 +350,6 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type MedferdirDocumentDataSlicesSlice =
-  | TitleAndRichTextSlice
-  | TreatmentHeroSlice;
-
-/**
- * Content for Medferdir documents
- */
-interface MedferdirDocumentData {
-  /**
-   * Title field in *Medferdir*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: medferdir.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Button field in *Medferdir*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: medferdir.button
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
-  /**
-   * Slice Zone field in *Medferdir*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: medferdir.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<MedferdirDocumentDataSlicesSlice>;
-}
-
-/**
- * Medferdir document from Prismic
- *
- * - **API ID**: `medferdir`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type MedferdirDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<MedferdirDocumentData>,
-    "medferdir",
-    Lang
-  >;
-
 /**
  * Item in *Nav → Navlinks*
  */
@@ -324,67 +431,6 @@ export type NavbarDocument<Lang extends string = string> =
     "navbar",
     Lang
   >;
-
-type NewsDocumentDataSlicesSlice = never;
-
-/**
- * Content for News documents
- */
-interface NewsDocumentData {
-  /**
-   * Slice Zone field in *News*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: news.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<NewsDocumentDataSlicesSlice> /**
-   * Meta Title field in *News*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: news.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_title: prismic.KeyTextField;
-
-  /**
-   * Meta Description field in *News*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: news.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *News*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: news.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>;
-}
-
-/**
- * News document from Prismic
- *
- * - **API ID**: `news`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type NewsDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<NewsDocumentData>, "news", Lang>;
 
 type PageDocumentDataSlicesSlice =
   | SideBySideInfoSlice
@@ -635,11 +681,11 @@ export type TreatmentBlogDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | ArticleArchieveDocument
+  | ArticlePostsDocument
   | FooterDocument
   | HomepageDocument
-  | MedferdirDocument
   | NavbarDocument
-  | NewsDocument
   | PageDocument
   | TestimonialCardsDocument
   | TreatmentBlogDocument;
@@ -1762,6 +1808,11 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      ArticleArchieveDocument,
+      ArticleArchieveDocumentData,
+      ArticleArchieveDocumentDataSlicesSlice,
+      ArticlePostsDocument,
+      ArticlePostsDocumentData,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataQuickLinksItem,
@@ -1770,16 +1821,10 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
-      MedferdirDocument,
-      MedferdirDocumentData,
-      MedferdirDocumentDataSlicesSlice,
       NavbarDocument,
       NavbarDocumentData,
       NavbarDocumentDataNavlinksItem,
       NavbarDocumentDataSlicesSlice,
-      NewsDocument,
-      NewsDocumentData,
-      NewsDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

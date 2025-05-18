@@ -1,20 +1,38 @@
 {
   "format": "page",
-  "id": "news",
+  "id": "article_archieve",
+  "label": "Article archieve",
+  "repeatable": false,
+  "status": true,
   "json": {
     "Main": {
-      "uid": {
-        "type": "UID",
+      "title": {
+        "type": "Text",
         "config": {
-          "label": "UID"
+          "label": "title",
+          "placeholder": ""
+        }
+      },
+      "text": {
+        "type": "Text",
+        "config": {
+          "label": "text",
+          "placeholder": ""
         }
       },
       "slices": {
-        "config": {
-          "choices": {}
-        },
+        "type": "Slices",
         "fieldset": "Slice Zone",
-        "type": "Slices"
+        "config": {
+          "choices": {
+            "title_and_rich_text": {
+              "type": "SharedSlice"
+            },
+            "rich_text": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     },
     "SEO & Metadata": {
@@ -44,8 +62,5 @@
         "type": "Image"
       }
     }
-  },
-  "label": "News",
-  "repeatable": true,
-  "status": true
+  }
 }
