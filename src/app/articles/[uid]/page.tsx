@@ -6,7 +6,7 @@ import { PrismicNextImage } from "@prismicio/next";
 
 type Params = { uid: string };
 // Optional: set dynamic metadata for SEO
-export async function generateMetadata({
+/* export async function generateMetadata({
   params,
 }: {
   params: Params;
@@ -30,7 +30,7 @@ export async function generateMetadata({
     },
   };
 }
-
+ */
 export default async function BlogPostPage({
   params,
 }: {
