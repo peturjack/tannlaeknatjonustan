@@ -4,13 +4,12 @@ import { createClient } from "@/prismicio";
 import { Metadata } from "next";
 import { PrismicNextImage } from "@prismicio/next";
 
-type ArticleParams = { uid: string };
-
+type Params = { uid: string };
 // Optional: set dynamic metadata for SEO
 export async function generateMetadata({
   params,
 }: {
-  params: ArticleParams;
+  params: Params;
 }): Promise<Metadata> {
   const client = createClient();
   const post = await client
@@ -35,12 +34,11 @@ export async function generateMetadata({
 export default async function BlogPostPage({
   params,
 }: {
-  params: ArticleParams;
+  params: Promise<Params>;
 }) {
+  const { uid } = await params;
   const client = createClient();
-  const post = await client
-    .getByUID("article_posts", params.uid)
-    .catch(() => null); // <-- return null, not notFound()
+  const post = await client.getByUID("article_posts", uid).catch(() => null); // <-- return null, not notFound()
 
   if (!post) return notFound(); // <-- call notFound() here
 
