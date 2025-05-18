@@ -36,9 +36,9 @@ export default async function BlogPostPage({ params }: { params: Params }) {
   const client = createClient();
   const post = await client
     .getByUID("article_posts", params.uid)
-    .catch(() => notFound());
+    .catch(() => null); // <-- return null, not notFound()
 
-  if (!post) return notFound();
+  if (!post) return notFound(); // <-- call notFound() here
 
   // Format date if available
   let formattedDate = "";
