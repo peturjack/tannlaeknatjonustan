@@ -89,6 +89,47 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "pricingList",
+      "name": "Pricing list",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "treatments": {
+          "type": "Group",
+          "config": {
+            "label": "List",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Treatment",
+                  "placeholder": ""
+                }
+              },
+              "cost": {
+                "type": "Text",
+                "config": {
+                  "label": "Cost",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

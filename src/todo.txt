@@ -1,7 +1,10 @@
-create news and news template - Finished on this date 5/17/2025 - todo
+create news and news template - Finished on this date 5/17/2025 - Done
+make the price page and add content - todo
+make content for the contact page
 fix navbar issue with links pathname - todo
 make changes to hero slice - todo
 add another variation of a hero slice - todo
+change slices - todo
 make changes to about us page styling wise - todo
 link all of the buttons to each page - todo
 make the hero testimonial cards link work - todo

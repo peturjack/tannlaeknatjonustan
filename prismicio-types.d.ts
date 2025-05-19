@@ -1077,12 +1077,61 @@ export type HeroSliceSliceImageTopTextBelow = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *HeroSlice → image bottom text top → Primary*
+ */
+export interface HeroSliceSliceImageBottomTextTopPrimary {
+  /**
+   * Title field in *HeroSlice → image bottom text top → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.imageBottomTextTop.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * text field in *HeroSlice → image bottom text top → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.imageBottomTextTop.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * Image field in *HeroSlice → image bottom text top → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.imageBottomTextTop.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * image bottom text top variation for HeroSlice Slice
+ *
+ * - **API ID**: `imageBottomTextTop`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceSliceImageBottomTextTop = prismic.SharedSliceVariation<
+  "imageBottomTextTop",
+  Simplify<HeroSliceSliceImageBottomTextTopPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *HeroSlice*
  */
 type HeroSliceSliceVariation =
   | HeroSliceSliceDefault
   | HeroSliceSliceImageLeftAndTextRight
-  | HeroSliceSliceImageTopTextBelow;
+  | HeroSliceSliceImageTopTextBelow
+  | HeroSliceSliceImageBottomTextTop;
 
 /**
  * HeroSlice Shared Slice
@@ -1194,6 +1243,31 @@ export interface LinkSectionSliceDropdownListPrimaryTreatmentsItem {
 }
 
 /**
+ * Item in *LinkSection → Pricing list → Primary → List*
+ */
+export interface LinkSectionSlicePricingListPrimaryTreatmentsItem {
+  /**
+   * Treatment field in *LinkSection → Pricing list → Primary → List*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_section.pricingList.primary.treatments[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Cost field in *LinkSection → Pricing list → Primary → List*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_section.pricingList.primary.treatments[].cost
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cost: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *LinkSection → Default → Primary*
  */
 export interface LinkSectionSliceDefaultPrimary {
@@ -1274,11 +1348,52 @@ export type LinkSectionSliceDropdownList = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *LinkSection → Pricing list → Primary*
+ */
+export interface LinkSectionSlicePricingListPrimary {
+  /**
+   * Title field in *LinkSection → Pricing list → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_section.pricingList.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * List field in *LinkSection → Pricing list → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_section.pricingList.primary.treatments[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  treatments: prismic.GroupField<
+    Simplify<LinkSectionSlicePricingListPrimaryTreatmentsItem>
+  >;
+}
+
+/**
+ * Pricing list variation for LinkSection Slice
+ *
+ * - **API ID**: `pricingList`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LinkSectionSlicePricingList = prismic.SharedSliceVariation<
+  "pricingList",
+  Simplify<LinkSectionSlicePricingListPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *LinkSection*
  */
 type LinkSectionSliceVariation =
   | LinkSectionSliceDefault
-  | LinkSectionSliceDropdownList;
+  | LinkSectionSliceDropdownList
+  | LinkSectionSlicePricingList;
 
 /**
  * LinkSection Shared Slice
@@ -1849,10 +1964,12 @@ declare module "@prismicio/client" {
       HeroSliceSliceDefaultPrimary,
       HeroSliceSliceImageLeftAndTextRightPrimary,
       HeroSliceSliceImageTopTextBelowPrimary,
+      HeroSliceSliceImageBottomTextTopPrimary,
       HeroSliceSliceVariation,
       HeroSliceSliceDefault,
       HeroSliceSliceImageLeftAndTextRight,
       HeroSliceSliceImageTopTextBelow,
+      HeroSliceSliceImageBottomTextTop,
       HeroTestimonialsSlice,
       HeroTestimonialsSliceDefaultPrimary,
       HeroTestimonialsSliceVariation,
@@ -1862,9 +1979,12 @@ declare module "@prismicio/client" {
       LinkSectionSliceDefaultPrimary,
       LinkSectionSliceDropdownListPrimaryTreatmentsItem,
       LinkSectionSliceDropdownListPrimary,
+      LinkSectionSlicePricingListPrimaryTreatmentsItem,
+      LinkSectionSlicePricingListPrimary,
       LinkSectionSliceVariation,
       LinkSectionSliceDefault,
       LinkSectionSliceDropdownList,
+      LinkSectionSlicePricingList,
       LocationSliceSlice,
       LocationSliceSliceDefaultPrimary,
       LocationSliceSliceVariation,

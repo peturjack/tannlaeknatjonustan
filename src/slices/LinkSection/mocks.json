@@ -89,5 +89,48 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "pricingList",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "section",
+				"type": "Text"
+			},
+			"treatments": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "past",
+									"type": "Text"
+								}
+							],
+							[
+								"cost",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "rubbed",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

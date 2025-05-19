@@ -102,6 +102,22 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
             </Bounded>
           </div>
         );
+      case "imageBottomTextTop":
+        return (
+          <Bounded yPadding="noT-sm" className=" mt-[var(--header-height)]  ">
+            <div className="flex flex-col mx-auto gap-6 max-w-[35rem]">
+              <div className="text-center flex flex-col gap-4">
+                <h1>{slice.primary.title}</h1>
+                <p className="text-primary-600">{slice.primary.text}</p>
+              </div>
+
+              <PrismicNextImage
+                className="w-[27rem] h-[15rem] object-cover mx-auto"
+                field={slice.primary.image}
+              />
+            </div>
+          </Bounded>
+        );
     }
   };
   return renderContent();

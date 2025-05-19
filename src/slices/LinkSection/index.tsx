@@ -82,6 +82,31 @@ const LinkSection: FC<LinkSectionProps> = async ({ slice }) => {
             </div>
           </section>
         );
+      case "pricingList":
+        return (
+          <Bounded>
+            <div className="max-w-2xl mx-auto bg-white p-6">
+              <h2 className="text-2xl font-bold mb-2 text-primary-base">
+                {slice.primary.title}
+              </h2>
+              <div className="divide-y divide-primary-100">
+                {slice.primary.treatments.map((item, index) => (
+                  <div
+                    className="flex flex-col md:flex-row md:justify-between md:items-center py-4"
+                    key={index}
+                  >
+                    <p className="text-lg font-medium text-gray-700">
+                      {item.title}
+                    </p>
+                    <p className="text-lg font-semibold text-primary-500">
+                      {item.cost}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Bounded>
+        );
     }
   };
   return renderContent();
