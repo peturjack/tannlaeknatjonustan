@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 export const components = {
   alternate_grid: dynamic(() => import("./AlternateGrid")),
+  form: dynamic(() => import("./Form")),
   hero_review: dynamic(() => import("./HeroReview")),
   hero_slice: dynamic(() => import("./HeroSlice")),
   hero_testimonials: dynamic(() => import("./HeroTestimonials")),

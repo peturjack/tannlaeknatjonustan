@@ -19,20 +19,20 @@ const AlternateGrid: FC<AlternateGridProps> = ({ slice }) => {
     <Bounded as="section" yPadding="noT-sm">
       <div
         className={clsx(
-          "flex flex-col items-center justify-center md:justify-between gap-6",
-          slice.variation === "imageLeft" && "md:flex-row-reverse",
-          slice.variation === "default" && "md:flex-row"
+          "flex flex-col items-center justify-center md:justify-between gap-6 ",
+          slice.variation === "imageLeft" && "lg:flex-row-reverse",
+          slice.variation === "default" && "lg:flex-row"
         )}
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
       >
-        <div className="flex-1">
+        <div className="flex-1 h-full">
           <PrismicNextImage
-            className="w-full object-cover rounded-2xl"
+            className="w-full h-full object-cover rounded-2xl"
             field={slice.primary.image}
           />
         </div>
-        <div className="flex-1 text-primary-600 prose prose-lg prose-h3:text-primary-base">
+        <div className="flex-1 h-full flex items-center text-primary-600 prose-base prose-lg prose-h3:text-primary-base">
           <PrismicRichText field={slice.primary.body} />
         </div>
       </div>
