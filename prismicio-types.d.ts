@@ -433,6 +433,7 @@ export type NavbarDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | TestimonialAboutSlice
   | FormSlice
   | SideBySideInfoSlice
   | LinkSectionSlice
@@ -1808,6 +1809,51 @@ export type SideBySideInfoSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *TestimonialAbout → Default → Primary*
+ */
+export interface TestimonialAboutSliceDefaultPrimary {
+  /**
+   * Title field in *TestimonialAbout → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial_about.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for TestimonialAbout Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialAboutSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TestimonialAboutSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TestimonialAbout*
+ */
+type TestimonialAboutSliceVariation = TestimonialAboutSliceDefault;
+
+/**
+ * TestimonialAbout Shared Slice
+ *
+ * - **API ID**: `testimonial_about`
+ * - **Description**: TestimonialAbout
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialAboutSlice = prismic.SharedSlice<
+  "testimonial_about",
+  TestimonialAboutSliceVariation
+>;
+
+/**
  * Primary content in *TitleAndRichText → Default → Primary*
  */
 export interface TitleAndRichTextSliceDefaultPrimary {
@@ -2101,6 +2147,10 @@ declare module "@prismicio/client" {
       SideBySideInfoSliceIllustrationLeftTextRightPrimary,
       SideBySideInfoSliceVariation,
       SideBySideInfoSliceIllustrationLeftTextRight,
+      TestimonialAboutSlice,
+      TestimonialAboutSliceDefaultPrimary,
+      TestimonialAboutSliceVariation,
+      TestimonialAboutSliceDefault,
       TitleAndRichTextSlice,
       TitleAndRichTextSliceDefaultPrimary,
       TitleAndRichTextSliceTitlePrimary,

@@ -1,22 +1,16 @@
-import { notFound } from "next/navigation";
-import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
-import { Bounded } from "../components/container/Bounded";
-import { ScrollToHash } from "../components/scrollComponent/ScrollToHash";
+import React from "react";
+import { Bounded } from "../container/Bounded";
+import { ScrollToHash } from "../scrollComponent/ScrollToHash";
 
-export default async function AboutPage() {
+const TestAbout = async () => {
   const client = createClient();
-  const page = await client.getByUID("page", "about").catch(() => notFound());
   const testimonials = await client.getAllByType("testimonial_cards");
-
   return (
     <section>
       <ScrollToHash />
-      <SliceZone slices={page.data.slices} components={components} />
-
       <Bounded className="flex flex-col gap-12 items-stretch pb-40">
         {testimonials.map((item, idx) => (
           <div
@@ -44,4 +38,6 @@ export default async function AboutPage() {
       </Bounded>
     </section>
   );
-}
+};
+
+export default TestAbout;
