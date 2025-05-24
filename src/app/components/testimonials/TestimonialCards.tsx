@@ -2,24 +2,27 @@
 import { motion } from "motion/react";
 import { ImageField, KeyTextField, LinkField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import React from "react";
+import React, { FC } from "react";
 import Button from "../button/Button";
+import { PrismicLink } from "@prismicio/react";
 
-type Props = {
+interface TestimonialCardsProps {
   image: ImageField;
   title: string | KeyTextField;
   description: string | KeyTextField;
   isButton?: boolean;
   button?: LinkField;
-};
+  cardId?: string; // Add this prop
+}
 
-const TestimonialCards = ({
+const TestimonialCards: FC<TestimonialCardsProps> = ({
   image,
   title,
   description,
   isButton,
   button,
-}: Props) => {
+  cardId,
+}) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -38,14 +41,14 @@ const TestimonialCards = ({
             {description}
           </p>
         </div>
-        <div>
-          <Button
-            className={`text-center ${isButton ? "block" : "hidden"}`}
-            text={button}
-            variant="primaryDefault"
-          />
-        </div>
       </div>
+      {isButton && button && cardId && (
+        <PrismicLink
+          field={button}
+          href={`/about#about-${cardId}`}
+          className="mt-4 inline-block bg-primary-500 text-white px-4 py-2 rounded hover:bg-primary-600 transition"
+        />
+      )}
     </motion.div>
   );
 };

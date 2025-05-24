@@ -563,6 +563,17 @@ interface TestimonialCardsDocumentData {
   description: prismic.KeyTextField;
 
   /**
+   * Full description field in *Testimonial Cards*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial_cards.full_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  full_description: prismic.KeyTextField;
+
+  /**
    * isButton field in *Testimonial Cards*
    *
    * - **Field Type**: Boolean

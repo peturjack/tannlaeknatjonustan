@@ -34,6 +34,13 @@
           "placeholder": ""
         }
       },
+      "full_description": {
+        "type": "Text",
+        "config": {
+          "label": "Full description",
+          "placeholder": ""
+        }
+      },
       "isbutton": {
         "type": "Boolean",
         "config": {

@@ -36,14 +36,16 @@ const HeroTestimonials: FC<HeroTestimonialsProps> = async ({ slice }) => {
         "
       >
         {testimonials.map((card) => {
+          const cardId = `${card.id}`;
           return (
-            <div key={card.id}>
+            <div key={card.id} id={cardId}>
               <TestimonialCards
                 image={card.data.image}
                 title={card.data.title}
                 description={card.data.description}
                 isButton={card.data.isbutton}
                 button={card.data.button}
+                cardId={cardId} // Pass the id to the card
               />
             </div>
           );
