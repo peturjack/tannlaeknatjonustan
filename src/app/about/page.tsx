@@ -5,7 +5,7 @@ import { components } from "@/slices";
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 import { Bounded } from "../components/container/Bounded";
-import ScrollToHash from "./ScrollToHash";
+import { ScrollToHash } from "../components/scrollComponent/ScrollToHash";
 
 export default async function AboutPage() {
   const client = createClient();

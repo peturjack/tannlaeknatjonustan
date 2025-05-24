@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 
-export default function ScrollToHash() {
+export function ScrollToHash() {
   useEffect(() => {
     if (window.location.hash) {
       const el = document.getElementById(window.location.hash.replace("#", ""));
