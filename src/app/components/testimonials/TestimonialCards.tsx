@@ -3,7 +3,6 @@ import { motion } from "motion/react";
 import { ImageField, KeyTextField, LinkField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import React, { FC } from "react";
-import Button from "../button/Button";
 import { PrismicLink } from "@prismicio/react";
 
 interface TestimonialCardsProps {
