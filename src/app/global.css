@@ -3,10 +3,6 @@
 @plugin "tailwindcss-motion";
 @plugin "@tailwindcss/typography";
 
-html {
-  scroll-behavior: smooth;
-}
-
 @theme {
   --color-dark: #030712;
   --color-bg: #fdfdfd;
