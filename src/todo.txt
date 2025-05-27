@@ -1,11 +1,12 @@
 create news and news template - Finished on this date 5/17/2025 - Done
-make the price page and add content - done
+make the price page and add content - Done
+make the hero testimonial cards link work - Done
+make content for the contact page - Done
+make the email component work and send mail to the right gmail - todo
 take out aftercare hero - todo
-make content for the contact page - todo
 fix navbar issue with links pathname - todo
 make changes to hero slice - todo
 add another variation of a hero slice - todo
 change slices - todo
 make changes to about us page styling wise - todo
 link all of the buttons to each page - todo
-make the hero testimonial cards link work - todo
