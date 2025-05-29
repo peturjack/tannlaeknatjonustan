@@ -60,15 +60,3 @@
     @apply text-[#ECCD4D];
   }
 }
-
-@layer components {
-  .reviewCard {
-    @apply p-4 rounded-2xl space-y-4;
-    p {
-      @apply text-lg text-primary-600;
-    }
-    /*  span {
-      @apply;
-    } */
-  }
-}

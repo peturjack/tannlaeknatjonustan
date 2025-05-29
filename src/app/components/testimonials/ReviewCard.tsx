@@ -17,9 +17,9 @@ export default function ReviewCard({ review, backgroundColor, name }: Props) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeInOut" }}
       viewport={{ once: true }}
-      className={`reviewCard border-1 border-gray-200`}
+      className={`p-4 rounded-2xl flex flex-col gap-4 justify-between border-1 border-gray-200`}
     >
-      <p>{review}</p>
+      <p className="text-lg text-primary-600">{review}</p>
       <div className="flex justify-between items-center">
         <span className="text-gray-400">{name}</span>
         <div className={`${backgroundColor}`}>
