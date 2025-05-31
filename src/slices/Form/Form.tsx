@@ -1,6 +1,5 @@
 "use client";
-import { KeyTextField, LinkField } from "@prismicio/client";
-
+import { KeyTextField } from "@prismicio/client";
 import React, { useState } from "react";
 
 type Props = {
