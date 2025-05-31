@@ -4,32 +4,7 @@ import { createClient } from "@/prismicio";
 import { PrismicNextImage } from "@prismicio/next";
 
 type Params = { uid: string };
-// Optional: set dynamic metadata for SEO
-/* export async function generateMetadata({
-  params,
-}: {
-  params: Params;
-}): Promise<Metadata> {
-  const client = createClient();
-  const post = await client
-    .getByUID("article_posts", params.uid)
-    .catch(() => null);
 
-  if (!post) return { title: "Post Not Found" };
-
-  return {
-    title: post.data.title || "Grein",
-    description: post.data.excerpt || "",
-    openGraph: {
-      title: post.data.title || "Grein",
-      description: post.data.excerpt || "",
-      images: post.data.cover_image?.url
-        ? [{ url: post.data.cover_image.url }]
-        : [],
-    },
-  };
-}
- */
 export default async function BlogPostPage({
   params,
 }: {
@@ -59,7 +34,8 @@ export default async function BlogPostPage({
     <article className="max-w-3xl mx-auto mt-[var(--header-height)] pb-10 px-4">
       {post.data.cover_image?.url && (
         <PrismicNextImage
-          className="w-full h-auto rounded-xl mb-6"
+          height={400}
+          className="w-full h-[400px] object-cover rounded-xl mb-6"
           field={post.data.cover_image}
         />
       )}

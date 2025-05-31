@@ -49,11 +49,11 @@ export default async function Page() {
                 <h3 className="text-lg font-bold text-primary-700 mb-2 group-hover:text-primary-500 transition-colors">
                   {article.data.title}
                 </h3>
-                {article.data.excerpt && (
-                  <p className="text-gray-600 text-sm bg-primary-50 rounded p-3 mb-4 line-clamp-3">
-                    {article.data.excerpt}
-                  </p>
-                )}
+
+                <p className="text-gray-600 text-sm bg-primary-50 rounded mb-4 line-clamp-3">
+                  {article.data.excerpt}
+                </p>
+
                 <span className="mt-auto text-xs text-gray-400">
                   {article.data.date &&
                     new Date(article.data.date).toLocaleDateString("is-IS", {
