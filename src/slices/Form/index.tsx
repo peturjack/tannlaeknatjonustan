@@ -25,7 +25,7 @@ const Form: FC<FormProps> = ({ slice }) => {
         surname={slice.primary.surname}
         email={slice.primary.email}
         message={slice.primary.message}
-        button={slice.primary.button}
+        button={slice.primary.button_text}
       />
     </Bounded>
   );

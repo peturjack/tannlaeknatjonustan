@@ -843,14 +843,14 @@ export interface FormSliceDefaultPrimary {
   message: prismic.KeyTextField;
 
   /**
-   * Button field in *Form → Default → Primary*
+   * Button text field in *Form → Default → Primary*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: form.default.primary.button
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: form.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+  button_text: prismic.KeyTextField;
 }
 
 /**

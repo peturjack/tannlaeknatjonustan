@@ -40,15 +40,11 @@
             "placeholder": ""
           }
         },
-        "button": {
-          "type": "Link",
+        "button_text": {
+          "type": "Text",
           "config": {
-            "label": "Button",
-            "placeholder": "",
-            "select": null,
-            "allowTargetBlank": true,
-            "allowText": true,
-            "repeat": false
+            "label": "Button text",
+            "placeholder": ""
           }
         }
       },

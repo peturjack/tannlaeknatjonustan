@@ -8,7 +8,7 @@ type Props = {
   surname: KeyTextField;
   email: KeyTextField;
   message: KeyTextField;
-  button: LinkField;
+  button: KeyTextField;
 };
 
 const FormComponent = ({ name, surname, email, message, button }: Props) => {
@@ -154,7 +154,7 @@ const FormComponent = ({ name, surname, email, message, button }: Props) => {
           {sending ? (
             <span className="animate-spin mr-2 w-4 h-4 border-2 border-white border-t-transparent rounded-full"></span>
           ) : null}
-          <PrismicNextLink field={button} />
+          {button || "Senda"}
         </button>
         {submitted && Object.keys(errors).length === 0 && (
           <p className="text-green-600 text-sm mt-2">

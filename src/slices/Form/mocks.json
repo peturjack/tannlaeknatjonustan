@@ -23,14 +23,10 @@
 				"value": "process",
 				"type": "Text"
 			},
-			"button": {
-				"key": "68cb9a6e-d25d-4ea1-98ae-d41c759e2f77",
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "https://prismic.io",
-					"text": "straight"
-				}
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "dawn",
+				"type": "Text"
 			}
 		},
 		"items": []
