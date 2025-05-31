@@ -1,6 +1,6 @@
 "use client";
 import { KeyTextField, LinkField } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
+
 import React, { useState } from "react";
 
 type Props = {
