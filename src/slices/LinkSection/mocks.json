@@ -81,6 +81,19 @@
 				"__TYPE__": "FieldContent",
 				"value": "neck",
 				"type": "Text"
+			},
+			"pdf": {
+				"__TYPE__": "LinkContent",
+				"key": "0fb4094b-f136-4916-91f8-68d5d170896f",
+				"value": {
+					"__TYPE__": "FileLink",
+					"id": "mock_Media_link",
+					"kind": "file",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"text": "spin"
+				}
 			}
 		},
 		"items": [

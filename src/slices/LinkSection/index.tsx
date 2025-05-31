@@ -73,6 +73,7 @@ const LinkSection: FC<LinkSectionProps> = async ({ slice }) => {
                   key={index}
                 >
                   <Dropdown
+                    pdf={slice.primary.pdf}
                     index={index}
                     question={item.question}
                     answer={item.answer}

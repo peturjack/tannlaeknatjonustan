@@ -1427,6 +1427,16 @@ export interface LinkSectionSliceDropdownListPrimary {
   treatments: prismic.GroupField<
     Simplify<LinkSectionSliceDropdownListPrimaryTreatmentsItem>
   >;
+
+  /**
+   * pdf field in *LinkSection → dropdown list → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_section.dropdownList.primary.pdf
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  pdf: prismic.LinkToMediaField<prismic.FieldState, never>;
 }
 
 /**

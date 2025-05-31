@@ -1,9 +1,10 @@
 "use client";
-import { KeyTextField } from "@prismicio/client";
+import { KeyTextField, LinkField } from "@prismicio/client";
 import clsx from "clsx";
 import React, { useState, useEffect } from "react";
 import { HiOutlinePlusCircle } from "react-icons/hi";
 import { motion, AnimatePresence } from "motion/react";
+import { PrismicNextLink } from "@prismicio/next";
 
 // Create a simple store to share the active index
 let activeIndex: number | null = null;
@@ -32,9 +33,10 @@ type Props = {
   question?: KeyTextField;
   answer?: KeyTextField;
   index: number;
+  pdf: LinkField;
 };
 
-export const Dropdown = ({ answer, question, index }: Props) => {
+export const Dropdown = ({ answer, question, index, pdf }: Props) => {
   const { isActive, setActive } = useActiveIndex(index);
 
   const showDropdown = () => {
@@ -60,15 +62,22 @@ export const Dropdown = ({ answer, question, index }: Props) => {
       </div>
       <AnimatePresence>
         {isActive && (
-          <motion.p
+          <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden leading-relaxed"
           >
-            {answer}
-          </motion.p>
+            <p>{answer}</p>
+            <PrismicNextLink
+              field={pdf}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-2 px-4 py-2 bg-primary-500 text-white rounded hover:bg-primary-600 transition"
+            ></PrismicNextLink>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>
