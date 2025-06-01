@@ -77,23 +77,18 @@
                   "placeholder": "add a common question"
                 }
               },
-              "answer": {
-                "type": "Text",
+              "link": {
+                "type": "Link",
                 "config": {
-                  "label": "answer",
-                  "placeholder": "answer to the question"
+                  "label": "Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
                 }
               }
             }
-          }
-        },
-        "pdf": {
-          "type": "Link",
-          "config": {
-            "label": "pdf",
-            "placeholder": "",
-            "select": "media",
-            "allowText": true
           }
         }
       },

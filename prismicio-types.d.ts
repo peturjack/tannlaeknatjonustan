@@ -1327,14 +1327,14 @@ export interface LinkSectionSliceDropdownListPrimaryTreatmentsItem {
   question: prismic.KeyTextField;
 
   /**
-   * answer field in *LinkSection → dropdown list → Primary → List*
+   * Link field in *LinkSection → dropdown list → Primary → List*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: answer to the question
-   * - **API ID Path**: link_section.dropdownList.primary.treatments[].answer
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_section.dropdownList.primary.treatments[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  answer: prismic.KeyTextField;
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
 
 /**
@@ -1427,16 +1427,6 @@ export interface LinkSectionSliceDropdownListPrimary {
   treatments: prismic.GroupField<
     Simplify<LinkSectionSliceDropdownListPrimaryTreatmentsItem>
   >;
-
-  /**
-   * pdf field in *LinkSection → dropdown list → Primary*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: link_section.dropdownList.primary.pdf
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  pdf: prismic.LinkToMediaField<prismic.FieldState, never>;
 }
 
 /**

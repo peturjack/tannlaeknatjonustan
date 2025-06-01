@@ -31,12 +31,11 @@ const useActiveIndex = (index: number) => {
 
 type Props = {
   question?: KeyTextField;
-  answer?: KeyTextField;
+  link?: LinkField;
   index: number;
-  pdf: LinkField;
 };
 
-export const Dropdown = ({ answer, question, index, pdf }: Props) => {
+export const Dropdown = ({ link, question, index }: Props) => {
   const { isActive, setActive } = useActiveIndex(index);
 
   const showDropdown = () => {
@@ -69,9 +68,8 @@ export const Dropdown = ({ answer, question, index, pdf }: Props) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden leading-relaxed"
           >
-            <p>{answer}</p>
             <PrismicNextLink
-              field={pdf}
+              field={link}
               download
               target="_blank"
               rel="noopener noreferrer"
