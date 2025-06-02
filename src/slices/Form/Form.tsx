@@ -147,7 +147,7 @@ const FormComponent = ({ name, surname, email, message, button }: Props) => {
         </div>
         <button
           type="submit"
-          className="bg-primary-500 hover:bg-primary-600 text-white font-semibold py-2 px-4 rounded transition-colors flex items-center justify-center"
+          className="bg-primary-500 cursor-pointer hover:bg-primary-600 text-white font-semibold py-2 px-4 rounded transition-colors flex items-center justify-center"
           disabled={sending}
         >
           {sending ? (

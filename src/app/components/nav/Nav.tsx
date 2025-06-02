@@ -80,10 +80,10 @@ const Nav = ({ nav }: Props) => {
               {nav.data.navlinks.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ delay: index * 0.3 }}
+                  exit={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
                 >
                   <PrismicNextLink
                     onClick={toggleOpen}

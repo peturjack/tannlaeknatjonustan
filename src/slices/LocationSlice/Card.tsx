@@ -1,7 +1,11 @@
+import Link from "next/link";
 import React from "react";
 import { HiClock, HiCalendar } from "react-icons/hi";
 
 const Card = () => {
+  const contactExists = true; // Simulating the existence of the contact page
+  const contactHref = contactExists ? "/contact" : "/hafðu-samband";
+
   return (
     <div className="p-4 rounded-lg bg-white min-w-[220px] max-w-xs ">
       <div className="flex flex-col gap-3">
@@ -33,13 +37,13 @@ const Card = () => {
             +354 555-1234
           </a>
         </div>
-        <button
-          type="button"
+        <Link
+          href={contactHref}
           className="mt-3 flex items-center justify-center gap-2 bg-secondary-700 hover:bg-secondary-500 cursor-pointer text-white font-semibold py-2 px-4 rounded transition-colors"
         >
-          <HiCalendar className="w-5 h-5" />
-          Bóka tíma
-        </button>
+          <HiCalendar className="w-5 h-5 text-white" />
+          <span className="text-white">Bóka tíma</span>
+        </Link>
       </div>
     </div>
   );
