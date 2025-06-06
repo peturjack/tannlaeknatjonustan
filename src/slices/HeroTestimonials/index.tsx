@@ -23,13 +23,13 @@ const HeroTestimonials: FC<HeroTestimonialsProps> = async ({ slice }) => {
 
   return (
     <Bounded
-      className="flex flex-col items-center 
+      className="flex flex-col items-center pt-0
       
       "
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <h2 className="mb-8">{slice.primary.title}</h2>
+      <h2 className="mb-8 text-center">{slice.primary.title}</h2>
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6
        

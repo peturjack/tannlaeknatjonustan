@@ -24,11 +24,12 @@ const LinkSection: FC<LinkSectionProps> = async ({ slice }) => {
       case "default":
         return (
           <Bounded
+            className="max-w-[90%] mx-auto"
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
           >
-            <h3 className="text-primary-600 mb-4">{slice.primary.title}</h3>
-            <div className="flex flex-col md:flex-row justify-between gap-8">
+            <h2 className="text-primary-600 mb-4">{slice.primary.title}</h2>
+            <div className="flex flex-col  justify-between gap-4">
               {" "}
               {/* Add gap-8 here for columns */}
               {slice.primary.treatments.map((item, index) => (
@@ -46,7 +47,10 @@ const LinkSection: FC<LinkSectionProps> = async ({ slice }) => {
                         className="flex items-center md:gap-10 py-2 border-b-2
                         border-primary-100/50 text-gray-600 group"
                       >
-                        <PrismicNextLink className="w-full" field={link} />
+                        <PrismicNextLink
+                          className="w-full text-[22px]"
+                          field={link}
+                        />
                         <HiOutlineArrowCircleRight className="size-6 group-hover:motion-preset-oscillate text-gray-400" />
                       </div>
                     ))}

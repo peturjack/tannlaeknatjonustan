@@ -19,7 +19,7 @@ const HeroReview: FC<HeroReviewProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <h2 className="mb-8">{slice.primary.title}</h2>
+      <h2 className="mb-8 text-center">{slice.primary.title}</h2>
       <div
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4
      

@@ -26,9 +26,9 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
       case "default":
         return (
           <section className="min-h-screen flex flex-col items-center">
-            <div className="relative h-screen w-full mt-[var(--header-height)] ">
+            <div className="relative h-screen w-full  ">
               <video
-                className="absolute inset-0  h-[calc(100%-var(--header-height))] w-full lg:w-[90%] lg:rounded-[2rem] mx-auto object-cover object-top"
+                className="absolute inset-0  h-[calc(100%-var(--header-height))] mt-[var(--header-height)] w-full lg:w-[90%] lg:rounded-[2rem] mx-auto object-cover object-top"
                 src={slice.primary.hero_video.text}
                 muted
                 playsInline
@@ -37,7 +37,7 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
               />
             </div>
 
-            <div className="flex flex-col items-center gap-8">
+            <div className="flex flex-col items-center my-20 gap-8">
               <PrismicNextImage
                 className="w-[250px] md:w-[350px]"
                 field={slice.primary.logo}
@@ -56,15 +56,17 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
         );
       case "imageLeftAndTextRight":
         return (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-15 md:gap-30 items-center min-h-screen">
+          <div className="grid grid-cols-1 px-6 lg:grid-cols-2 gap-15 items-center min-h-screen">
             <PrismicNextImage
-              className=" mt-[var(--header-height)] h-[calc(100%-var(--header-height))] object-cover"
+              className=" mt-[var(--header-height)] flex-1 rounded-[6px] h-[calc(100%-var(--header-height))] object-cover"
               field={slice.primary.image}
             />
 
-            <div className="max-w-3/4 mx-auto lg:mx-0 flex flex-col gap-6">
+            <div className=" flex-1 flex flex-col text-center items-center gap-6">
               <h1>{slice.primary.title}</h1>
-              <p>{slice.primary.description}</p>
+              <p className="text-[22px] text-primary-600">
+                {slice.primary.description}
+              </p>
               {isFilled.keyText(slice.primary.cta_button.text) ? (
                 <div>
                   <Button

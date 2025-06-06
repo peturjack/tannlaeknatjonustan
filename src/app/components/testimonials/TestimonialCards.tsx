@@ -45,7 +45,8 @@ const TestimonialCards: FC<TestimonialCardsProps> = ({
         <PrismicLink
           field={button}
           href={`/about#about-${cardId}`}
-          className="mt-4 inline-block bg-primary-500 text-white px-4 py-2 rounded hover:bg-primary-600 transition"
+          className="mt-4 inline-block border-2 border-secondary-500
+           text-secondary-base text-lg font-bold text-center px-4 py-2 rounded-[8px]"
         />
       )}
     </motion.div>

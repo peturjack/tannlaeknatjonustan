@@ -25,7 +25,7 @@ const SideBySideInfo: FC<SideBySideInfoProps> = ({ slice }) => {
       <div className="flex flex-col md:flex-row gap-[2.5rem] items-center ">
         <div className="md:w-1/2">
           <PrismicNextImage
-            className="h-[23rem] object-cover"
+            className=" object-cover"
             field={slice.primary.illustration}
           />
         </div>
