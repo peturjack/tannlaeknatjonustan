@@ -280,6 +280,7 @@ export type FooterDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | BannerSliceSlice
   | SideBySideInfoSlice
   | LocationSliceSlice
   | TitleAndRichTextSlice
@@ -796,6 +797,61 @@ type AlternateGridSliceVariation =
 export type AlternateGridSlice = prismic.SharedSlice<
   "alternate_grid",
   AlternateGridSliceVariation
+>;
+
+/**
+ * Primary content in *BannerSlice → Default → Primary*
+ */
+export interface BannerSliceSliceDefaultPrimary {
+  /**
+   * Left side illustration field in *BannerSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_slice.default.primary.left_side_illustration
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  left_side_illustration: prismic.ImageField<never>;
+
+  /**
+   * right side illustration field in *BannerSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_slice.default.primary.right_side_illustration
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  right_side_illustration: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for BannerSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BannerSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BannerSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BannerSlice*
+ */
+type BannerSliceSliceVariation = BannerSliceSliceDefault;
+
+/**
+ * BannerSlice Shared Slice
+ *
+ * - **API ID**: `banner_slice`
+ * - **Description**: BannerSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BannerSliceSlice = prismic.SharedSlice<
+  "banner_slice",
+  BannerSliceSliceVariation
 >;
 
 /**
@@ -2095,6 +2151,10 @@ declare module "@prismicio/client" {
       AlternateGridSliceVariation,
       AlternateGridSliceDefault,
       AlternateGridSliceImageLeft,
+      BannerSliceSlice,
+      BannerSliceSliceDefaultPrimary,
+      BannerSliceSliceVariation,
+      BannerSliceSliceDefault,
       FormSlice,
       FormSliceDefaultPrimary,
       FormSliceVariation,

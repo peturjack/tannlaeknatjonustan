@@ -28,7 +28,9 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
           <section className="min-h-screen flex flex-col items-center">
             <div className="relative h-screen w-full  ">
               <video
-                className="absolute inset-0  h-[calc(100%-var(--header-height))] mt-[var(--header-height)] w-full lg:w-[90%] lg:rounded-[2rem] mx-auto object-cover object-top"
+                className="absolute inset-0  h-[calc(100%-var(--header-height))]
+                 mt-[var(--header-height)] w-full lg:w-[90%] lg:rounded-[2rem]
+                  mx-auto object-cover object-top"
                 src={slice.primary.hero_video.text}
                 muted
                 playsInline
@@ -56,13 +58,14 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
         );
       case "imageLeftAndTextRight":
         return (
-          <div className="grid grid-cols-1 px-6 lg:grid-cols-2 gap-15 items-center min-h-screen">
-            <PrismicNextImage
-              className=" mt-[var(--header-height)] flex-1 rounded-[6px] h-[calc(100%-var(--header-height))] object-cover"
-              field={slice.primary.image}
-            />
-
-            <div className=" flex-1 flex flex-col text-center items-center gap-6">
+          <div className="flex flex-col mt-[var(--header-height)] lg:flex-row px-6 gap-8 items-center">
+            <div className="flex-1 flex justify-center">
+              <PrismicNextImage
+                className="rounded-[6px]  h-[470px] object-cover"
+                field={slice.primary.image}
+              />
+            </div>
+            <div className="flex flex-col flex-1 text-center gap-6">
               <h1>{slice.primary.title}</h1>
               <p className="text-[22px] text-primary-600">
                 {slice.primary.description}
@@ -83,7 +86,8 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
           <div className="min-h-screen flex flex-col">
             <div className="h-screen">
               <PrismicNextImage
-                className=" mt-[var(--header-height)] h-[calc(100%-var(--header-height))] w-full object-cover object-top "
+                className=" mt-[var(--header-height)] h-[calc(100%-var(--header-height))]
+                 w-full object-cover object-top "
                 field={slice.primary.image}
               />
             </div>

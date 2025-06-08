@@ -10,3 +10,51 @@ add another variation of a hero slice - todo
 change slices - todo
 make changes to about us page styling wise - todo
 link all of the buttons to each page - todo
+
+
+
+questions about design --
+
+the hero banner -- homepage 
+do you want it to move or do you want people to be able to click it,
+how do you envision it is it a link or what?
+witch illustrations do you want to use you have two different variations?
+answer: three sections moving clickable and stop when hovered
+
+
+general feedback -- questions and answers
+so do they want the homepage video and all other
+images to be styled to the design speciications?
+
+rounded corners --
+about the rounded corners the design dosent have rounded corners everywhere
+ so i need to talk to the designer about that. 
+
+google map -- location page
+do you have the design ready?
+
+i already implemented an api from leaflet
+that would be able to do everything that the dsign showed
+but now they want to add a defferent api from google maps and add stuff 
+that was not originally in the design.
+
+carousel -- service page
+when we talked about it you said that we didn't need a carousel and then now you want
+it so i need to redo the slice and programming
+
+team members section -- about us page
+are you asking me to redisign the team members design?
+
+last slice -- about us page
+the design is not consistent so im not sure what the designer wants there and very
+hard to get a hold of him.
+
+team members slice -- about us page
+what color do you want the background to be? you have two different colors
+
+all around design issues --
+no prototype where i can click through all the buttons only navbars,
+so it's hard to know where everything is going,
+no hover effects so i dont know how it should look like,
+no animations
+changing text sizes later 

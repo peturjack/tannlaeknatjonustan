@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <ObserverProvider>
-      <html className={`${kanit.variable} ${hind.variable}`} lang="en">
+      <html className={`${kanit.variable} ${hind.variable} `} lang="en">
         <body>
           <Header />
           {children}

@@ -1,0 +1,35 @@
+{
+  "id": "banner_slice",
+  "type": "SharedSlice",
+  "name": "BannerSlice",
+  "description": "BannerSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "left_side_illustration": {
+          "type": "Image",
+          "config": {
+            "label": "Left side illustration",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "right_side_illustration": {
+          "type": "Image",
+          "config": {
+            "label": "right side illustration",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
