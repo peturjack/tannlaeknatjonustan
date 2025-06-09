@@ -1,15 +1,16 @@
 "use client";
 import React from "react";
 import { useAnimate } from "motion/react";
+import type { AnimationPlaybackControls } from "motion";
 
 type Props = {
   children?: React.ReactNode;
   className?: string;
 };
 
-const BannerContainer = ({ children, className = "" }: Props) => {
+const BannerContainer = ({ children, className }: Props) => {
   const [scope, animate] = useAnimate();
-  const controlsRef = React.useRef<any>(null);
+  const controlsRef = React.useRef<AnimationPlaybackControls | null>(null);
 
   React.useEffect(() => {
     controlsRef.current = animate(

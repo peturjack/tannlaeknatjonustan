@@ -26,7 +26,7 @@ general feedback -- questions and answers
 so do they want the homepage video and all other
 images to be styled to the design speciications?
 
-rounded corners --
+rounded corners -- done
 about the rounded corners the design dosent have rounded corners everywhere
  so i need to talk to the designer about that. big pics 6px and smaller 32px done
 
@@ -45,7 +45,7 @@ it so i need to redo the slice and programming
 team members section -- about us page
 are you asking me to redisign the team members design?
 
-last slice -- about us page
+last slice -- about us page -- almost done
 the design is not consistent so im not sure what the designer wants there and very
 hard to get a hold of him.
 
