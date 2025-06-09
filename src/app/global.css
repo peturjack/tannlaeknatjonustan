@@ -25,7 +25,7 @@
   --color-secondary-700: #3b6163;
   --color-secondary-900: #131f20;
 
-  --text-h1: 36px;
+  --text-h1: 48px;
   --text-h1--line-height: 1;
   --text-h2: 32px;
   --font-headings: Kanit;
@@ -43,6 +43,9 @@
   }
   h3 {
     @apply text-xl md:text-2xl;
+  }
+  p {
+    @apply text-lg leading-[160%] text-primary-700;
   }
 }
 

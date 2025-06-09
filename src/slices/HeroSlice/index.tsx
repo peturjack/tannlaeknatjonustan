@@ -83,18 +83,18 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
         );
       case "imageTopTextBelow":
         return (
-          <div className="min-h-screen flex flex-col">
+          <div className="min-h-screen lg:w-[90%]  mx-auto flex flex-col">
             <div className="h-screen">
               <PrismicNextImage
-                className=" mt-[var(--header-height)] h-[calc(100%-var(--header-height))]
+                className=" mt-[var(--header-height)] lg:rounded-[2rem] h-[calc(100%-var(--header-height))]
                  w-full object-cover object-top "
                 field={slice.primary.image}
               />
             </div>
             <Bounded>
-              <div className=" flex flex-col gap-6">
+              <div className=" flex flex-col gap-6 max-w-[900px] mx-auto">
                 <h1>{slice.primary.title}</h1>
-                <p className="leading-relaxed">{slice.primary.description}</p>
+                <p>{slice.primary.description}</p>
 
                 <div
                   className={clsx(slice.primary.add_button ? "flex" : "hidden")}
@@ -111,14 +111,16 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
       case "imageBottomTextTop":
         return (
           <Bounded yPadding="noT-sm" className=" mt-[var(--header-height)]  ">
-            <div className="flex flex-col mx-auto gap-6 max-w-[35rem]">
+            <div className="flex flex-col mx-auto gap-6 max-w-[1024px]">
               <div className="text-center flex flex-col gap-4">
                 <h1>{slice.primary.title}</h1>
-                <p className="text-primary-600">{slice.primary.text}</p>
+                <p className="text-primary-600 text-lg">{slice.primary.text}</p>
               </div>
 
               <PrismicNextImage
-                className="w-[27rem] h-[15rem] object-cover mx-auto"
+                height={500}
+                width={500}
+                className="rounded-md object-fit mx-auto"
                 field={slice.primary.image}
               />
             </div>

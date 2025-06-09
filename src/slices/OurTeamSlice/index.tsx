@@ -33,7 +33,7 @@ const OurTeamSlice: FC<OurTeamSliceProps> = ({ slice }) => {
               className="flex items-center gap-6 text-primary-700"
             >
               {/* Green background with image overflowing bottom */}
-              <div className="relative bg-secondary-700 flex items-end justify-center w-40 h-40 rounded-3xl shrink-0 overflow-visible">
+              <div className="relative bg-secondary-500 flex items-end justify-center w-40 h-40 rounded-3xl shrink-0 overflow-visible">
                 <PrismicNextImage
                   height={200}
                   width={112}

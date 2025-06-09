@@ -781,11 +781,70 @@ export type AlternateGridSliceImageLeft = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *AlternateGrid → TitleAndButton → Primary*
+ */
+export interface AlternateGridSliceTitleAndButtonPrimary {
+  /**
+   * Image field in *AlternateGrid → TitleAndButton → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.titleAndButton.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *AlternateGrid → TitleAndButton → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.titleAndButton.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Body field in *AlternateGrid → TitleAndButton → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.titleAndButton.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  body: prismic.KeyTextField;
+
+  /**
+   * Button field in *AlternateGrid → TitleAndButton → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.titleAndButton.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * TitleAndButton variation for AlternateGrid Slice
+ *
+ * - **API ID**: `titleAndButton`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AlternateGridSliceTitleAndButton = prismic.SharedSliceVariation<
+  "titleAndButton",
+  Simplify<AlternateGridSliceTitleAndButtonPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *AlternateGrid*
  */
 type AlternateGridSliceVariation =
   | AlternateGridSliceDefault
-  | AlternateGridSliceImageLeft;
+  | AlternateGridSliceImageLeft
+  | AlternateGridSliceTitleAndButton;
 
 /**
  * AlternateGrid Shared Slice
@@ -2148,9 +2207,11 @@ declare module "@prismicio/client" {
       AlternateGridSlice,
       AlternateGridSliceDefaultPrimary,
       AlternateGridSliceImageLeftPrimary,
+      AlternateGridSliceTitleAndButtonPrimary,
       AlternateGridSliceVariation,
       AlternateGridSliceDefault,
       AlternateGridSliceImageLeft,
+      AlternateGridSliceTitleAndButton,
       BannerSliceSlice,
       BannerSliceSliceDefaultPrimary,
       BannerSliceSliceVariation,

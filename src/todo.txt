@@ -28,7 +28,7 @@ images to be styled to the design speciications?
 
 rounded corners --
 about the rounded corners the design dosent have rounded corners everywhere
- so i need to talk to the designer about that. 
+ so i need to talk to the designer about that. big pics 6px and smaller 32px done
 
 google map -- location page
 do you have the design ready?
