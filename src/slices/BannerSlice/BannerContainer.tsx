@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "motion/react";
+import { useAnimate } from "motion/react";
 
 type Props = {
   children?: React.ReactNode;
@@ -8,21 +8,41 @@ type Props = {
 };
 
 const BannerContainer = ({ children, className = "" }: Props) => {
+  const [scope, animate] = useAnimate();
+  const controlsRef = React.useRef<any>(null);
+
+  React.useEffect(() => {
+    controlsRef.current = animate(
+      scope.current,
+      { x: ["-50%", "0%"] },
+      {
+        duration: 16,
+        ease: "linear",
+        repeat: Infinity,
+        repeatType: "loop",
+      }
+    );
+    return () => controlsRef.current?.stop();
+  }, [animate, scope]);
+
+  const handleMouseEnter = () => {
+    controlsRef.current?.pause();
+  };
+
+  const handleMouseLeave = () => {
+    controlsRef.current?.play();
+  };
+
   return (
-    <div className={`overflow-hidden w-full ${className}`}>
-      <motion.div
-        className="flex flex-nowrap w-max overflow-hidden"
-        animate={{ x: ["-50%", "0%"] }}
-        transition={{
-          duration: 16,
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "loop",
-        }}
-      >
+    <div
+      className={`overflow-hidden w-full ${className}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div ref={scope} className="flex flex-nowrap w-max overflow-hidden">
         {children}
         {children} {/* Duplicate for seamless loop */}
-      </motion.div>
+      </div>
     </div>
   );
 };

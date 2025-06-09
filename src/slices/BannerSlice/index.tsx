@@ -21,34 +21,39 @@ const BannerSlice: FC<BannerSliceProps> = async ({ slice }) => {
   });
   return (
     <section
-      className="overflow-hidden py-22"
+      className="overflow-hidden h-[250px] flex items-center"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
       {/* Background to be blurred */}
-      <div className="relative mx-auto w-[1178px]">
+      <div className="relative mx-auto w-full max-w-[1178px]">
         <PrismicNextImage
-          className="absolute -left-75 -top-35 rotate-160 -scale-y-100 pointer-events-none select-none"
+          className="absolute -top-25 -left-60 md:-left-75 md:-top-35 rotate-160 
+          -scale-y-100 pointer-events-none select-none"
           field={slice.primary.left_side_illustration}
         />
         <PrismicNextImage
-          className="absolute -right-75 -top-35 rotate-180 -scale-y-100 pointer-events-none select-none"
+          className="absolute -top-25 -right-60 md:-right-75 md:-top-35 rotate-180 
+          -scale-y-100 pointer-events-none select-none"
           field={slice.primary.right_side_illustration}
         />
         {/* Glass effect container */}
         <div
           style={{ boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" }}
-          className="backdrop-blur-[20px] w-[1178px] mx-auto bg-white/20 p-2
+          className="backdrop-blur-[20px] md:w-[1178px] mx-auto bg-white/20 p-2
       rounded-md border border-white/30 z-20"
         >
           <BannerContainer>
-            {threeLatestNews.map((item) => (
-              <Banner
-                key={item.id}
-                title={item.data.title}
-                excerpt={item.data.excerpt}
-              />
-            ))}
+            {threeLatestNews.map((item) => {
+              return (
+                <Banner
+                  key={item.id}
+                  title={item.data.title}
+                  excerpt={item.data.excerpt}
+                  link={item.uid}
+                />
+              );
+            })}
           </BannerContainer>
         </div>
       </div>
