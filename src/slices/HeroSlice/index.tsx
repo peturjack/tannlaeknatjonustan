@@ -58,10 +58,10 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
         );
       case "imageLeftAndTextRight":
         return (
-          <div className="flex flex-col mt-[var(--header-height)] lg:flex-row px-6 gap-8 items-center">
-            <div className="flex-1 flex justify-center">
+          <div className="flex flex-col mt-[var(--header-height)] @container lg:flex-row px-6 gap-8 items-center ">
+            <div className="flex-1 flex justify-center ">
               <PrismicNextImage
-                className="rounded-[6px]  h-[470px] object-cover"
+                className="rounded-[6px] h-[214px] @md:h-[470px] object-cover object-center"
                 field={slice.primary.image}
               />
             </div>
@@ -73,6 +73,7 @@ const HeroSlice: FC<HeroSliceProps> = ({ slice }) => {
               {isFilled.keyText(slice.primary.cta_button.text) ? (
                 <div>
                   <Button
+                    className="px-25 rounded-md text-lg"
                     variant="primaryDefault"
                     text={slice.primary.cta_button}
                   />

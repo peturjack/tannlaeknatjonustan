@@ -3,14 +3,17 @@ make the price page and add content - Done
 make the hero testimonial cards link work - Done
 make content for the contact page - Done
 make the email component work and send mail to the right gmail - todo
-take out aftercare hero - todo
+take out aftercare hero - done
 fix navbar issue with links pathname - todo
-make changes to hero slice - todo
-add another variation of a hero slice - todo
+make changes to hero slice - done
+add another variation of a hero slice - done
 change slices - todo
-make changes to about us page styling wise - todo
-link all of the buttons to each page - todo
-
+link all of the buttons to each page - done
+make changes to about us page our team styling wise - todo
+add the font styles to the page - todo
+fix images sizes - todo
+add name, degree, bio and email icon to the our team section,
+so add to the slice and update the styling as well - todo
 
 
 questions about design --
