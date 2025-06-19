@@ -76,6 +76,22 @@
 									"value": "angle",
 									"type": "Text"
 								}
+							],
+							[
+								"degrees",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "record",
+									"type": "Text"
+								}
+							],
+							[
+								"bio",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "government",
+									"type": "Text"
+								}
 							]
 						]
 					}

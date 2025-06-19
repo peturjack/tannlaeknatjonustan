@@ -47,6 +47,20 @@
                   "placeholder": ""
                 }
               },
+              "bio": {
+                "type": "Text",
+                "config": {
+                  "label": "Bio",
+                  "placeholder": ""
+                }
+              },
+              "degrees": {
+                "type": "Text",
+                "config": {
+                  "label": "Degrees",
+                  "placeholder": ""
+                }
+              },
               "occupation": {
                 "type": "Select",
                 "config": {

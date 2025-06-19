@@ -1687,6 +1687,26 @@ export interface OurTeamSliceSliceDefaultPrimaryAddStaffItem {
   name: prismic.KeyTextField;
 
   /**
+   * Bio field in *OurTeamSlice → Default → Primary → Add Staff *
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_team_slice.default.primary.add_staff[].bio
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  bio: prismic.KeyTextField;
+
+  /**
+   * Degrees field in *OurTeamSlice → Default → Primary → Add Staff *
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_team_slice.default.primary.add_staff[].degrees
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  degrees: prismic.KeyTextField;
+
+  /**
    * Occupation field in *OurTeamSlice → Default → Primary → Add Staff *
    *
    * - **Field Type**: Select
