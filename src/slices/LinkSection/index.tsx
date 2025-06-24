@@ -24,7 +24,7 @@ const LinkSection: FC<LinkSectionProps> = async ({ slice }) => {
       case "default":
         return (
           <Bounded
-            className="max-w-[90%] mx-auto"
+            className="max-w-[1024px] mx-auto pt-15"
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
           >

@@ -434,6 +434,7 @@ export type NavbarDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FourLatestNewsSlice
   | TestimonialAboutSlice
   | FormSlice
   | SideBySideInfoSlice
@@ -994,6 +995,61 @@ type FormSliceVariation = FormSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type FormSlice = prismic.SharedSlice<"form", FormSliceVariation>;
+
+/**
+ * Primary content in *FourLatestNews → Default → Primary*
+ */
+export interface FourLatestNewsSliceDefaultPrimary {
+  /**
+   * Title field in *FourLatestNews → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: four_latest_news.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *FourLatestNews → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: four_latest_news.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for FourLatestNews Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FourLatestNewsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FourLatestNewsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FourLatestNews*
+ */
+type FourLatestNewsSliceVariation = FourLatestNewsSliceDefault;
+
+/**
+ * FourLatestNews Shared Slice
+ *
+ * - **API ID**: `four_latest_news`
+ * - **Description**: FourLatestNews
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FourLatestNewsSlice = prismic.SharedSlice<
+  "four_latest_news",
+  FourLatestNewsSliceVariation
+>;
 
 /**
  * Item in *HeroReview → Default → Primary → Review Cards*
@@ -2240,6 +2296,10 @@ declare module "@prismicio/client" {
       FormSliceDefaultPrimary,
       FormSliceVariation,
       FormSliceDefault,
+      FourLatestNewsSlice,
+      FourLatestNewsSliceDefaultPrimary,
+      FourLatestNewsSliceVariation,
+      FourLatestNewsSliceDefault,
       HeroReviewSlice,
       HeroReviewSliceDefaultPrimaryReviewCardsItem,
       HeroReviewSliceDefaultPrimary,

@@ -6,6 +6,7 @@ export const components = {
   alternate_grid: dynamic(() => import("./AlternateGrid")),
   banner_slice: dynamic(() => import("./BannerSlice")),
   form: dynamic(() => import("./Form")),
+  four_latest_news: dynamic(() => import("./FourLatestNews")),
   hero_review: dynamic(() => import("./HeroReview")),
   hero_slice: dynamic(() => import("./HeroSlice")),
   hero_testimonials: dynamic(() => import("./HeroTestimonials")),

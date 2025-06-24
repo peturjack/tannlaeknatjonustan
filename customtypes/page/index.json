@@ -34,6 +34,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "four_latest_news": {
+              "type": "SharedSlice"
+            },
             "testimonial_about": {
               "type": "SharedSlice"
             },

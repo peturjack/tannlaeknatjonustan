@@ -23,13 +23,13 @@ const SideBySideInfo: FC<SideBySideInfoProps> = ({ slice }) => {
         <h2>{slice.primary.title}</h2>
       </div>
       <div className="flex flex-col md:flex-row gap-[2.5rem] items-center ">
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 rounded-md">
           <PrismicNextImage
-            className=" object-cover"
+            className=" object-cover rounded-md"
             field={slice.primary.illustration}
           />
         </div>
-        <div className="md:w-1/2 flex flex-col gap-4 text-primary-500 ">
+        <div className="md:w-1/2 flex flex-col gap-6 text-primary-500 ">
           {slice.primary.info_group.map((item, index) => (
             <div className="flex flex-col gap-2" key={index}>
               <h3>{item.heading}</h3>
