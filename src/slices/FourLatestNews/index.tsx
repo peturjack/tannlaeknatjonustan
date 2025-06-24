@@ -44,15 +44,15 @@ const FourLatestNews: FC<FourLatestNewsProps> = async ({ slice }) => {
               />
             </div>
             <div className="flex flex-col flex-1 p-5">
-              <h3 className="text-lg font-bold text-primary-700 mb-2 group-hover:text-primary-500 transition-colors">
+              <h3 className=" font-bold text-xl text-primary-700 mb-2 group-hover:text-primary-500 transition-colors">
                 {item.data.title}
               </h3>
 
-              <p className="text-gray-600 text-sm bg-primary-50 rounded mb-4 line-clamp-3">
+              <p className="text-gray-600 text-base bg-primary-50 rounded mb-4 line-clamp-3">
                 {item.data.excerpt}
               </p>
 
-              <span className="mt-auto text-xs text-gray-400">
+              <span className="mt-auto text-sm text-gray-400">
                 {item.data.date &&
                   new Date(item.data.date).toLocaleDateString("is-IS", {
                     year: "numeric",
