@@ -8,6 +8,8 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence } from "motion/react";
+import tooth from "../../public/Tooth.svg";
+import Image from "next/image";
 type Props = {
   nav: Content.NavbarDocument;
 };
@@ -32,7 +34,11 @@ const Nav = ({ nav }: Props) => {
       >
         <div>
           <Link href={"/"}>
-            <PrismicNextImage className="min-w-[100px]" field={nav.data.logo} />
+            <PrismicNextImage
+              className={`min-w-[100px] hidden md:block`}
+              field={nav.data.logo}
+            />
+            <Image className="md:hidden" alt="tooth" src={tooth} />
           </Link>
         </div>
 
