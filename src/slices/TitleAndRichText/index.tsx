@@ -38,7 +38,7 @@ const TitleAndRichText: FC<TitleAndRichTextProps> = ({ slice }) => {
         data-slice-variation={slice.variation}
       >
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-primary-600 mb-4">
+          <h1 className=" font-bold text-primary-600 mb-4">
             {slice.primary.title}
           </h1>
           <div className="max-w-2xl mx-auto text-lg text-gray-700">
